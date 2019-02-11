@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="嘿!楽">
 <meta property="og:description" content="Math方法 sqrt：开方 abs：绝对值 PI：π pow(x,y) ：x的y次方 round：取整（四舍五入） random：随机数0~1 min（x，y，z）：从x，y，z中取最小值 max（x，y，z）：从x，y，z中取最大值 ceil：向上取整 floor：向下取整  例： 1Math.round(Math.random*100) //随机生成1~100的随机数 日期对象Date方法n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-11T13:58:53.259Z">
+<meta property="og:updated_time" content="2019-02-11T14:01:05.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript-03">
 <meta name="twitter:description" content="Math方法 sqrt：开方 abs：绝对值 PI：π pow(x,y) ：x的y次方 round：取整（四舍五入） random：随机数0~1 min（x，y，z）：从x，y，z中取最小值 max（x，y，z）：从x，y，z中取最大值 ceil：向上取整 floor：向下取整  例： 1Math.round(Math.random*100) //随机生成1~100的随机数 日期对象Date方法n">
@@ -199,12 +199,20 @@ ga('send', 'pageview');
 <p>例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.round(Math.random*100) //随机生成1~100的随机数</span><br></pre></td></tr></table></figure>
 <h1 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h1><h2 id="Date方法"><a href="#Date方法" class="headerlink" title="Date方法"></a>Date方法</h2><p>new Date()：新建日期对象</p>
-<p>getFullYear：获取年份</p>
-<p>getMonth：获取月份</p>
-<p>getDay：获取日</p>
-<p>getHours：获取时</p>
-<p>getMinutes：获取分</p>
-<p>getSeconds：获取秒</p>
+<ul>
+<li><p>getFullYear：获取年份</p>
+</li>
+<li><p>getMonth：获取月份</p>
+</li>
+<li><p>getDay：获取日</p>
+</li>
+<li><p>getHours：获取时</p>
+</li>
+<li><p>getMinutes：获取分</p>
+</li>
+<li><p>getSeconds：获取秒</p>
+</li>
+</ul>
 <p>例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var today = new Date();</span><br><span class="line">var year = today.getFullYear();</span><br><span class="line">var month = today.getMonth()+1;</span><br><span class="line">var day = today.getDay();</span><br><span class="line">var hour = today.getHours();</span><br><span class="line">var minute = today.getMinutes();</span><br><span class="line"> var second = today.getSeconds();</span><br><span class="line">console.log(year+&apos;年&apos;+month+&apos;月&apos;+day+&apos;日&apos;+hour+&apos;:&apos;+minute+&apos;:&apos;+second);</span><br></pre></td></tr></table></figure>
 <h2 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h2><p>时间戳：格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。</p>
@@ -227,10 +235,16 @@ ga('send', 'pageview');
 
 console.log(a)
 </code></pre><p>}</p>
-<h1 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h1><p>setTimeout：设置定时器</p>
-<p>clearTimeout：清除定时器</p>
-<p>setInterval：设置定时器</p>
-<p>clearInterval：清除定时器</p>
+<h1 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h1><ul>
+<li><p>setTimeout：设置定时器</p>
+</li>
+<li><p>clearTimeout：清除定时器</p>
+</li>
+<li><p>setInterval：设置定时器</p>
+</li>
+<li><p>clearInterval：清除定时器</p>
+</li>
+</ul>
 <p>注：清除定时器的时候，要给定时器加个名字</p>
 <p>例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementsByTagName(&quot;button&quot;)[0];</span><br><span class="line"></span><br><span class="line">    //1000毫秒=1秒</span><br><span class="line"></span><br><span class="line">setTimeout(function () &#123;</span><br><span class="line"></span><br><span class="line">        console.log(123)</span><br><span class="line"></span><br><span class="line">    &#125;,1000);</span><br><span class="line"></span><br><span class="line">var timer = setInterval(function () &#123;</span><br><span class="line">    console.log(123)</span><br><span class="line">&#125;,1000);</span><br><span class="line"></span><br><span class="line">btn.onclick = function () &#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -238,7 +252,7 @@ console.log(a)
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月11日 21:58</p>
+        <p>最后更新： 2019年02月11日 22:01</p>
         <p>原始链接： <a class="post-url" href="/JavaScript-03.html" title="JavaScript-03">https://lesama.github.io/JavaScript-03.html</a></p>
         <footer>
             <a href="https://lesama.github.io">
