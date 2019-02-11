@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="嘿!楽">
 <meta property="og:description" content="Math方法 sqrt：开方 abs：绝对值 PI：π pow(x,y) ：x的y次方 round：取整（四舍五入） random：随机数0~1 min（x，y，z）：从x，y，z中取最小值 max（x，y，z）：从x，y，z中取最大值 ceil：向上取整 floor：向下取整  例： 1Math.round(Math.random*100) //随机生成1~100的随机数 日期对象Date方法n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-11T13:54:55.458Z">
+<meta property="og:updated_time" content="2019-02-11T13:58:53.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript-03">
 <meta name="twitter:description" content="Math方法 sqrt：开方 abs：绝对值 PI：π pow(x,y) ：x的y次方 round：取整（四舍五入） random：随机数0~1 min（x，y，z）：从x，y，z中取最小值 max（x，y，z）：从x，y，z中取最大值 ceil：向上取整 floor：向下取整  例： 1Math.round(Math.random*100) //随机生成1~100的随机数 日期对象Date方法n">
@@ -218,7 +218,7 @@ ga('send', 'pageview');
 <h2 id="匿名函数："><a href="#匿名函数：" class="headerlink" title="匿名函数："></a>匿名函数：</h2><p>​    匿名函数一般充当事件函数</p>
 <p>例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line"></span><br><span class="line">box.onclick = function()&#123;</span><br><span class="line"></span><br><span class="line">	console.log(123);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="自调用函数："><a href="#自调用函数：" class="headerlink" title="自调用函数："></a>自调用函数：</h3><p>自调用函数是在函数表达式写完后自动执行</p>
+<h2 id="自调用函数："><a href="#自调用函数：" class="headerlink" title="自调用函数："></a>自调用函数：</h2><p>自调用函数是在函数表达式写完后自动执行</p>
 <p>其函数表达式前面加上 (,),+,-,!,~ </p>
 <p>例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">	 console.log(&quot;ok&quot;);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">+function()&#123;</span><br><span class="line">	 console.log(&quot;ok&quot;);</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
@@ -232,29 +232,13 @@ console.log(a)
 <p>setInterval：设置定时器</p>
 <p>clearInterval：清除定时器</p>
 <p>注：清除定时器的时候，要给定时器加个名字</p>
-<h2 id="setTimeout与setInterval的区别"><a href="#setTimeout与setInterval的区别" class="headerlink" title="setTimeout与setInterval的区别"></a>setTimeout与setInterval的区别</h2><p>setTimeout执行一次，setInterval一直循环执行，直到清除定时器</p>
 <p>例：</p>
-<pre><code>var btn = document.getElementsByTagName(&quot;button&quot;)[0];
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementsByTagName(&quot;button&quot;)[0];</span><br><span class="line"></span><br><span class="line">    //1000毫秒=1秒</span><br><span class="line"></span><br><span class="line">setTimeout(function () &#123;</span><br><span class="line"></span><br><span class="line">        console.log(123)</span><br><span class="line"></span><br><span class="line">    &#125;,1000);</span><br><span class="line"></span><br><span class="line">var timer = setInterval(function () &#123;</span><br><span class="line">    console.log(123)</span><br><span class="line">&#125;,1000);</span><br><span class="line"></span><br><span class="line">btn.onclick = function () &#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="setTimeout与setInterval的区别"><a href="#setTimeout与setInterval的区别" class="headerlink" title="setTimeout与setInterval的区别"></a>setTimeout与setInterval的区别</h2><p> setTimeout执行一次，setInterval一直循环执行，直到清除定时器</p>
 
-    //1000毫秒=1秒
-
-setTimeout(function () {
-
-        console.log(123)
-
-    },1000);
-
-var timer = setInterval(function () {
-    console.log(123)
-},1000);
-
-btn.onclick = function () {
-    clearInterval(timer);
-};
-</code></pre>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月11日 21:54</p>
+        <p>最后更新： 2019年02月11日 21:58</p>
         <p>原始链接： <a class="post-url" href="/JavaScript-03.html" title="JavaScript-03">https://lesama.github.io/JavaScript-03.html</a></p>
         <footer>
             <a href="https://lesama.github.io">
@@ -378,7 +362,7 @@ btn.onclick = function () {
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Math方法"><span class="post-toc-text">Math方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#日期对象"><span class="post-toc-text">日期对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Date方法"><span class="post-toc-text">Date方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时间戳"><span class="post-toc-text">时间戳</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#函数"><span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数的定义"><span class="post-toc-text">函数的定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义有名函数"><span class="post-toc-text">定义有名函数:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调用函数"><span class="post-toc-text">调用函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#匿名函数："><span class="post-toc-text">匿名函数：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自调用函数："><span class="post-toc-text">自调用函数：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定时器"><span class="post-toc-text">定时器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#setTimeout与setInterval的区别"><span class="post-toc-text">setTimeout与setInterval的区别</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Math方法"><span class="post-toc-text">Math方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#日期对象"><span class="post-toc-text">日期对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Date方法"><span class="post-toc-text">Date方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时间戳"><span class="post-toc-text">时间戳</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#函数"><span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数的定义"><span class="post-toc-text">函数的定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义有名函数"><span class="post-toc-text">定义有名函数:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调用函数"><span class="post-toc-text">调用函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#匿名函数："><span class="post-toc-text">匿名函数：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自调用函数："><span class="post-toc-text">自调用函数：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定时器"><span class="post-toc-text">定时器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#setTimeout与setInterval的区别"><span class="post-toc-text">setTimeout与setInterval的区别</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
