@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>JavaScript-02 | 嘿!楽</title>
+  <title>JavaScript-03 | 嘿!楽</title>
     <script>
       var _hmt = _hmt || [];
       (function() {
@@ -19,18 +19,18 @@
   
     <meta name="keywords" content="楽,人工智能,Python">
   
-  <meta name="description" content="avaScript操作符运算符 关系运算符  &amp;gt; &amp;lt; &amp;gt;= &amp;lt;= != == === !== ​            ==:比较数据  不比较类型 ​            ===：比数据比类型  . 逻辑运算符  &amp;amp;&amp;amp;逻辑与  || 逻辑或  ！逻辑非      算术运算符  + －   /  %  ++  －－ +=  =  /=  赋值运算符  =">
-<meta name="keywords" content="楽,人工智能,python,web,爬虫,机器学习,深度学习,强化学习,深度强化学习,JavaScript,js,jq">
+  <meta name="description" content="Math方法 sqrt：开方 abs：绝对值 PI：π pow(x,y) ：x的y次方 round：取整（四舍五入） random：随机数0~1 min（x，y，z）：从x，y，z中取最小值 max（x，y，z）：从x，y，z中取最大值 ceil：向上取整 floor：向下取整  例： 1Math.round(Math.random*100) //随机生成1~100的随机数 日期对象Date方法n">
+<meta name="keywords" content="js,JavaScript,web,网页">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript-02">
-<meta property="og:url" content="https://lesama.github.io/JavaScript-02.html">
+<meta property="og:title" content="JavaScript-03">
+<meta property="og:url" content="https://lesama.github.io/JavaScript-03.html">
 <meta property="og:site_name" content="嘿!楽">
-<meta property="og:description" content="avaScript操作符运算符 关系运算符  &amp;gt; &amp;lt; &amp;gt;= &amp;lt;= != == === !== ​            ==:比较数据  不比较类型 ​            ===：比数据比类型  . 逻辑运算符  &amp;amp;&amp;amp;逻辑与  || 逻辑或  ！逻辑非      算术运算符  + －   /  %  ++  －－ +=  =  /=  赋值运算符  =">
+<meta property="og:description" content="Math方法 sqrt：开方 abs：绝对值 PI：π pow(x,y) ：x的y次方 round：取整（四舍五入） random：随机数0~1 min（x，y，z）：从x，y，z中取最小值 max（x，y，z）：从x，y，z中取最大值 ceil：向上取整 floor：向下取整  例： 1Math.round(Math.random*100) //随机生成1~100的随机数 日期对象Date方法n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-09T00:33:41.728Z">
+<meta property="og:updated_time" content="2019-02-11T13:52:06.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript-02">
-<meta name="twitter:description" content="avaScript操作符运算符 关系运算符  &amp;gt; &amp;lt; &amp;gt;= &amp;lt;= != == === !== ​            ==:比较数据  不比较类型 ​            ===：比数据比类型  . 逻辑运算符  &amp;amp;&amp;amp;逻辑与  || 逻辑或  ！逻辑非      算术运算符  + －   /  %  ++  －－ +=  =  /=  赋值运算符  =">
+<meta name="twitter:title" content="JavaScript-03">
+<meta name="twitter:description" content="Math方法 sqrt：开方 abs：绝对值 PI：π pow(x,y) ：x的y次方 round：取整（四舍五入） random：随机数0~1 min（x，y，z）：从x，y，z中取最小值 max（x，y，z）：从x，y，z中取最大值 ceil：向上取整 floor：向下取整  例： 1Math.round(Math.random*100) //随机生成1~100的随机数 日期对象Date方法n">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -148,14 +148,14 @@ ga('send', 'pageview');
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-JavaScript-02" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-JavaScript-03" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      JavaScript-02
+      JavaScript-03
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -168,7 +168,7 @@ ga('send', 'pageview');
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-02-09
+          <i class="fa fa-calendar"></i>  2019-02-11
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -184,85 +184,79 @@ ga('send', 'pageview');
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="avaScript操作符"><a href="#avaScript操作符" class="headerlink" title="avaScript操作符"></a>avaScript操作符</h1><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ol>
-<li><p>关系运算符  &gt; &lt; &gt;= &lt;= != == === !==</p>
-<p>​            ==:比较数据  不比较类型</p>
-<p>​            ===：比数据比类型</p>
-<p> . 逻辑运算符  &amp;&amp;逻辑与  || 逻辑或  ！逻辑非    </p>
-</li>
-<li><p>算术运算符  + － <em>  /  %  ++  －－ +=  </em>=  /=</p>
-</li>
-<li><p>赋值运算符  =</p>
-</li>
-<li><p>条件运算符  （三目运算符 三元运算符）？：</p>
-<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><p><strong>typeof</strong><br>判断变量的数据类型  两种写法<br> typeof 变量名<br> typeof （变量名）</p>
-<p> number      –如果这个字值是数值<br> string         –如果这个字值是字符串<br> undefined  –如果这个字值是未定义<br> boolean     –如果这个字值是布尔值<br> object    –如果这个字值是对象或null<br> function     –如果这个字值是函数</p>
-</li>
-</ol>
-<h1 id="JavaScript控制流程语句"><a href="#JavaScript控制流程语句" class="headerlink" title="JavaScript控制流程语句"></a>JavaScript控制流程语句</h1><ul>
-<li><p>选择结构</p>
-<p>​        if…else</p>
-<p>​        switch…case(可以使用字符串)</p>
-</li>
-<li><p>循环结构</p>
-<p>​        for</p>
-<p>​        do…while</p>
-<p>​        while</p>
-<p>​        for  in   for(var i in 数组名) i 代表数组下标，只能放在数组中</p>
-</li>
-<li><p>跳转语句</p>
-<p>​        break</p>
-<p>​        continue</p>
-</li>
+            <h1 id="Math方法"><a href="#Math方法" class="headerlink" title="Math方法"></a>Math方法</h1><ul>
+<li>sqrt：开方</li>
+<li>abs：绝对值</li>
+<li>PI：π</li>
+<li>pow(x,y) ：x的y次方</li>
+<li>round：取整（四舍五入）</li>
+<li>random：随机数0~1</li>
+<li>min（x，y，z）：从x，y，z中取最小值</li>
+<li>max（x，y，z）：从x，y，z中取最大值</li>
+<li>ceil：向上取整</li>
+<li>floor：向下取整</li>
 </ul>
-<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><h2 id="字符串的常用方法"><a href="#字符串的常用方法" class="headerlink" title="字符串的常用方法"></a>字符串的常用方法</h2><ul>
-<li><p>lenght; 长度</p>
-</li>
-<li><p>[]/cjarAt（）;下标</p>
-</li>
-<li><p>Replace（）;替换</p>
-</li>
-<li><p>Split（）; 分割</p>
-</li>
-<li><p>Slice（）;切割</p>
-</li>
-<li><p>Substring（）;截取</p>
-</li>
-<li><p>toUpperCase（）;转大写</p>
-</li>
-<li><p>toLowerCase（）;转小写</p>
-</li>
-<li><p>isnan（）;–判断是否为数值类型  –true  不是数值   –false  是数值</p>
-</li>
-<li><p>parseint（）; 转数值类型</p>
-</li>
-<li><p>parsefloat（）; 转小数类型</p>
-</li>
-<li><p>字符串函数</p>
-<p>​    indexof（””）</p>
-<p>​    字符串.indexof（”a”）; –返回a字符 在字符串中的下标 从0开始，如果未找到返回-1</p>
-</li>
-</ul>
-<h2 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h2><ul>
-<li>length;长度</li>
-<li>[];下标</li>
-<li>push（）;右加</li>
-<li>Unshift（）;左家</li>
-<li>Pop（）;右删</li>
-<li>Shift（）;左删</li>
-<li>Concat（）;连接</li>
-<li>Reverse（）;反向</li>
-<li>Sort（）;排序</li>
-<li>join（）;拼接</li>
-<li>splice（）;替换</li>
-<li>slice（）;切片</li>
-<li>indexOf（）;索引</li>
-</ul>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.round(Math.random*100) //随机生成1~100的随机数</span><br></pre></td></tr></table></figure>
+<h1 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h1><h2 id="Date方法"><a href="#Date方法" class="headerlink" title="Date方法"></a>Date方法</h2><p>new Date()：新建日期对象</p>
+<p>getFullYear</p>
+<p>getMonth</p>
+<p>getDate</p>
+<p>getDay</p>
+<p>getHours</p>
+<p>getMinutes</p>
+<p>getSeconds</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var today = new Date();</span><br><span class="line">var year = today.getFullYear();</span><br><span class="line">var month = today.getMonth()+1;</span><br><span class="line">var day = today.getDay();</span><br><span class="line">var hour = today.getHours();</span><br><span class="line">var minute = today.getMinutes();</span><br><span class="line"> var second = today.getSeconds();</span><br><span class="line">console.log(year+&apos;年&apos;+month+&apos;月&apos;+day+&apos;日&apos;+hour+&apos;:&apos;+minute+&apos;:&apos;+second);</span><br></pre></td></tr></table></figure>
+<h2 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h2><p>时间戳：格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var timestamp = Date.new();//新建</span><br><span class="line"></span><br><span class="line">console.log(&quot;timestamp:&quot;timestamp);</span><br></pre></td></tr></table></figure>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2><p>函数是通常是把一系列重复使用的操作封装成一个方法，方便调用</p>
+<p>函数分类：有名函数，匿名函数</p>
+<h2 id="定义有名函数"><a href="#定义有名函数" class="headerlink" title="定义有名函数:"></a>定义有名函数:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function 函数名()&#123;</span><br><span class="line">	//代码块</span><br><span class="line">	console.log(&quot;OK&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>自定义函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var result=function 函数名()&#123;</span><br><span class="line">	//代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名();</span><br></pre></td></tr></table></figure>
+<h2 id="匿名函数："><a href="#匿名函数：" class="headerlink" title="匿名函数："></a>匿名函数：</h2><p>​    匿名函数一般充当事件函数</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line"></span><br><span class="line">box.onclick = function()&#123;</span><br><span class="line"></span><br><span class="line">	console.log(123);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="自调用函数："><a href="#自调用函数：" class="headerlink" title="自调用函数："></a>自调用函数：</h3><p>自调用函数是在函数表达式写完后自动执行</p>
+<p>其函数表达式前面加上 (,),+,-,!,~ </p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">	 console.log(&quot;ok&quot;);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">+function()&#123;</span><br><span class="line">	 console.log(&quot;ok&quot;);</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+<p>函数参数：<br>function sum(){<br>     var a = x+y+z；   //需要传入3个参数x，y，z</p>
+<pre><code>console.log(argments);  //argments为接收的不定参数
 
+console.log(a)
+</code></pre><p>}</p>
+<h1 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h1><p>setTimeout：设置定时器</p>
+<p>clearTimeout：清除定时器</p>
+<p>setInterval：设置定时器</p>
+<p>clearInterval：清除定时器</p>
+<p>注：清除定时器的时候，要给定时器加个名字</p>
+<h2 id="setTimeout与setInterval的区别"><a href="#setTimeout与setInterval的区别" class="headerlink" title="setTimeout与setInterval的区别"></a>setTimeout与setInterval的区别</h2><p>setTimeout执行一次，setInterval一直循环执行，直到清除定时器</p>
+<p>例：</p>
+<pre><code>var btn = document.getElementsByTagName(&quot;button&quot;)[0];
+
+    //1000毫秒=1秒
+
+setTimeout(function () {
+
+        console.log(123)
+
+    },1000);
+
+var timer = setInterval(function () {
+    console.log(123)
+},1000);
+
+btn.onclick = function () {
+    clearInterval(timer);
+};
+</code></pre>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月09日 08:33</p>
-        <p>原始链接： <a class="post-url" href="/JavaScript-02.html" title="JavaScript-02">https://lesama.github.io/JavaScript-02.html</a></p>
+        <p>最后更新： 2019年02月11日 21:52</p>
+        <p>原始链接： <a class="post-url" href="/JavaScript-03.html" title="JavaScript-03">https://lesama.github.io/JavaScript-03.html</a></p>
         <footer>
             <a href="https://lesama.github.io">
                 <img src="/images/logo.png" alt="lesama">
@@ -319,7 +313,7 @@ ga('send', 'pageview');
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lesama.github.io/JavaScript-02.html&title=《JavaScript-02》 — 嘿!楽&pic=http://pli97ivex.bkt.clouddn.com/exiabg.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lesama.github.io/JavaScript-03.html&title=《JavaScript-03》 — 嘿!楽&pic=http://pli97ivex.bkt.clouddn.com/exiazm.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -329,22 +323,22 @@ ga('send', 'pageview');
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lesama.github.io/JavaScript-02.html&title=《JavaScript-02》 — 嘿!楽&source=这是一个与人工智能相关的网站" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lesama.github.io/JavaScript-03.html&title=《JavaScript-03》 — 嘿!楽&source=这是一个与人工智能相关的网站" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://lesama.github.io/JavaScript-02.html" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://lesama.github.io/JavaScript-03.html" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript-02》 — 嘿!楽&url=https://lesama.github.io/JavaScript-02.html&via=https://lesama.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript-03》 — 嘿!楽&url=https://lesama.github.io/JavaScript-03.html&via=https://lesama.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://lesama.github.io/JavaScript-02.html" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://lesama.github.io/JavaScript-03.html" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -354,7 +348,7 @@ ga('send', 'pageview');
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://lesama.github.io/JavaScript-02.html" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://lesama.github.io/JavaScript-03.html" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -363,6 +357,19 @@ ga('send', 'pageview');
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/js/" class="color3">js</a>
+      
+    <a href="/tags/JavaScript/" class="color1">JavaScript</a>
+      
+    <a href="/tags/web/" class="color4">web</a>
+      
+    <a href="/tags/网页/" class="color3">网页</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -372,26 +379,16 @@ ga('send', 'pageview');
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#avaScript操作符"><span class="post-toc-text">avaScript操作符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运算符"><span class="post-toc-text">运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#操作符"><span class="post-toc-text">操作符</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript控制流程语句"><span class="post-toc-text">JavaScript控制流程语句</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用方法"><span class="post-toc-text">常用方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符串的常用方法"><span class="post-toc-text">字符串的常用方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组的常用方法"><span class="post-toc-text">数组的常用方法</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Math方法"><span class="post-toc-text">Math方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#日期对象"><span class="post-toc-text">日期对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Date方法"><span class="post-toc-text">Date方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时间戳"><span class="post-toc-text">时间戳</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#函数"><span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数的定义"><span class="post-toc-text">函数的定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义有名函数"><span class="post-toc-text">定义有名函数:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调用函数"><span class="post-toc-text">调用函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#匿名函数："><span class="post-toc-text">匿名函数：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自调用函数："><span class="post-toc-text">自调用函数：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定时器"><span class="post-toc-text">定时器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#setTimeout与setInterval的区别"><span class="post-toc-text">setTimeout与setInterval的区别</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/JavaScript-03.html" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          JavaScript-03
-        
-      </span>
-    </a>
   
-  
-    <a href="/JavaScript-01.html" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">JavaScript-01</span>
+    <a href="/JavaScript-02.html" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JavaScript-02</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
