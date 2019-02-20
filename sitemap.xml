@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lesama.github.io/JavaScript-02.html</loc>
+    
+    <lastmod>2019-02-20T15:37:24.031Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lesama.github.io/html.html</loc>
     
     <lastmod>2019-02-17T02:55:59.316Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://lesama.github.io/css-02.html</loc>
     
     <lastmod>2019-02-17T02:53:08.419Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/JavaScript-02.html</loc>
-    
-    <lastmod>2019-02-17T02:52:46.684Z</lastmod>
     
   </url>
   
