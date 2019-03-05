@@ -2061,7 +2061,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f0bbff;
+  background: #297528;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3015,6 +3015,7 @@ body {
 .sidebar {
   box-shadow: inset 2px 2px 40px #fff;
   background-image: url("http://lesama-blog.oss-cn-beijing.aliyuncs.com/image/gtrr.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .sidebar a {
