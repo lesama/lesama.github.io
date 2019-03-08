@@ -2061,7 +2061,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a118ff;
+  background: #b68a18;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2804,9 +2804,6 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
-}
-.music_wangyi {
-  border-radius: 15px;
 }
 .post {
   margin-top: 60px;
