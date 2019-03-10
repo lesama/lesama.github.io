@@ -74,7 +74,7 @@
     root: '/',
     scheme: 'Muse',
     version: '6.7.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1. 盒子模型 可以把页面上的元素看成一个盒子 盒子模型由内容、内边距、边框、外边距构成 padding - 内边距 margin - 外边距 ☆ border - 边框 content(width、height) - 内容 border-top: 上边框 border-right: 右边框 border-left: 左边框 border-bottom: 下边框  double 双线 dotte">
-<meta name="keywords" content="css,web,html,网页">
+  <meta name="description" content="1. 盒子模型可以把页面上的元素看成一个盒子 盒子模型由内容、内边距、边框、外边距构成 padding - 内边距 margin - 外边距 ☆ border - 边框 content(width、height) - 内容 border-top: 上边框 border-right: 右边框 border-left: 左边框 border-bottom: 下边框  double 双线 dotted">
+<meta name="keywords" content="html,web,网页,css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS进阶">
 <meta property="og:url" content="https://lesama.github.io/css-02.html">
 <meta property="og:site_name" content="嘿!楽">
-<meta property="og:description" content="1. 盒子模型 可以把页面上的元素看成一个盒子 盒子模型由内容、内边距、边框、外边距构成 padding - 内边距 margin - 外边距 ☆ border - 边框 content(width、height) - 内容 border-top: 上边框 border-right: 右边框 border-left: 左边框 border-bottom: 下边框  double 双线 dotte">
+<meta property="og:description" content="1. 盒子模型可以把页面上的元素看成一个盒子 盒子模型由内容、内边距、边框、外边距构成 padding - 内边距 margin - 外边距 ☆ border - 边框 content(width、height) - 内容 border-top: 上边框 border-right: 右边框 border-left: 左边框 border-bottom: 下边框  double 双线 dotted">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-07T12:31:07.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS进阶">
-<meta name="twitter:description" content="1. 盒子模型 可以把页面上的元素看成一个盒子 盒子模型由内容、内边距、边框、外边距构成 padding - 内边距 margin - 外边距 ☆ border - 边框 content(width、height) - 内容 border-top: 上边框 border-right: 右边框 border-left: 左边框 border-bottom: 下边框  double 双线 dotte">
+<meta name="twitter:description" content="1. 盒子模型可以把页面上的元素看成一个盒子 盒子模型由内容、内边距、边框、外边距构成 padding - 内边距 margin - 外边距 ☆ border - 边框 content(width、height) - 内容 border-top: 上边框 border-right: 右边框 border-left: 左边框 border-bottom: 下边框  double 双线 dotted">
 
 
 
@@ -174,7 +174,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -210,7 +210,7 @@
     <!-- 头像效果-end -->
     
       
-        <p class="site-subtitle">欢迎来到我的个人站</p>
+        <h1 class="site-subtitle" itemprop="description">这里是楽的个人博客~</h1>
       
     
     
@@ -316,23 +316,6 @@
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-schedule">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
-
-  </li>
 
       
       
@@ -416,7 +399,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="楽">
       <meta itemprop="description" content="这是里 楽 的个人博客">
-      <meta itemprop="image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/image/logo.png">
+      <meta itemprop="image" content="/images/logo.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -428,11 +411,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS进阶
+          <h2 class="post-title" itemprop="name headline">CSS进阶
 
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -523,8 +506,7 @@
       
 
       
-        <h1 id="1-盒子模型"><a class="markdownIt-Anchor" href="#1-盒子模型"></a> 1. 盒子模型</h1>
-<pre><code>可以把页面上的元素看成一个盒子
+        <h1 id="1-盒子模型"><a href="#1-盒子模型" class="headerlink" title="1. 盒子模型"></a>1. 盒子模型</h1><pre><code>可以把页面上的元素看成一个盒子
 盒子模型由内容、内边距、边框、外边距构成
 padding - 内边距
 margin - 外边距 ☆
@@ -540,42 +522,35 @@ dashed 虚线
 solid 实线
 padding、margin - 参数 上右下左 顺时针
 px 像素
-</code></pre>
-<h1 id="2-reset-重置"><a class="markdownIt-Anchor" href="#2-reset-重置"></a> 2. Reset 重置</h1>
-<pre><code>Reset - 重置CSS
-	浏览器解析标签的时候本身自带一些样式，有时会导致我们自身写的样式出现的效果不一致
-	每个公司会根据自己的业务需求写一套属于自己的ResetCss
-	以下是一个通用的RESETCSS：
-		https://meyerweb.com/eric/tools/css/reset/
-</code></pre>
-<h1 id="3-浮动"><a class="markdownIt-Anchor" href="#3-浮动"></a> 3. 浮动</h1>
-<pre><code>float:left 向左浮动
+</code></pre><h1 id="2-Reset-重置"><a href="#2-Reset-重置" class="headerlink" title="2. Reset 重置"></a>2. Reset 重置</h1><pre><code>Reset - 重置CSS
+    浏览器解析标签的时候本身自带一些样式，有时会导致我们自身写的样式出现的效果不一致
+    每个公司会根据自己的业务需求写一套属于自己的ResetCss
+    以下是一个通用的RESETCSS：
+        https://meyerweb.com/eric/tools/css/reset/
+</code></pre><h1 id="3-浮动"><a href="#3-浮动" class="headerlink" title="3. 浮动"></a>3. 浮动</h1><pre><code>float:left 向左浮动
 float:right 向右浮动
 使用浮动须知：
-	- 要先改成内联块状
-	- 脱离文档流
-	- 可能会造成高度塌陷
+    - 要先改成内联块状
+    - 脱离文档流
+    - 可能会造成高度塌陷
 三种解决方法：
     1、overflow:hidden;不推荐只适用于纯浮动的页面布局
     2、加一个空的&lt;div&gt;&lt;/div&gt;;也不推荐
     3、.clearfix::{
             display:block;
             clear:both;
-            content:''; 空字符
+            content:&apos;&apos;; 空字符
         } 推荐 比较常用
-</code></pre>
-<h1 id="4-定位"><a class="markdownIt-Anchor" href="#4-定位"></a> 4. 定位</h1>
-<pre><code>作用：对元素进行精确的定位
+</code></pre><h1 id="4-定位"><a href="#4-定位" class="headerlink" title="4. 定位"></a>4. 定位</h1><pre><code>作用：对元素进行精确的定位
 三种形式
-	1、绝对定位:position:absolute;
-		绝对定位是脱离文档流的
-	2、相对定位:posttion:relative;
-	3、固定定位:position:fixed;
-		固定定位与相对定位不脱离文档流，是相对于自己的一个偏移
+    1、绝对定位:position:absolute;
+        绝对定位是脱离文档流的
+    2、相对定位:posttion:relative;
+    3、固定定位:position:fixed;
+        固定定位与相对定位不脱离文档流，是相对于自己的一个偏移
 
 父相（对）子绝（对）：保持页面的布局完整 
 </code></pre>
-
       
     </div>
 
@@ -627,13 +602,13 @@ float:right 向右浮动
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+            <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
           
             <a href="/tags/web/" rel="tag"><i class="fa fa-tag"></i> web</a>
           
-            <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
-          
             <a href="/tags/网页/" rel="tag"><i class="fa fa-tag"></i> 网页</a>
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
           
         </div>
       
@@ -721,7 +696,7 @@ float:right 向右浮动
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/image/logo.png" alt="楽">
+              <img class="site-author-image" itemprop="image" src="/images/logo.png" alt="楽">
             
               <p class="site-author-name" itemprop="name">楽</p>
               <div class="site-description motion-element" itemprop="description">这是里 楽 的个人博客</div>
@@ -895,7 +870,7 @@ float:right 向右浮动
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-盒子模型"><span class="nav-number">1.</span> <span class="nav-text"> 1. 盒子模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-reset-重置"><span class="nav-number">2.</span> <span class="nav-text"> 2. Reset 重置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-浮动"><span class="nav-number">3.</span> <span class="nav-text"> 3. 浮动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-定位"><span class="nav-number">4.</span> <span class="nav-text"> 4. 定位</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-盒子模型"><span class="nav-number">1.</span> <span class="nav-text">1. 盒子模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Reset-重置"><span class="nav-number">2.</span> <span class="nav-text">2. Reset 重置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-浮动"><span class="nav-number">3.</span> <span class="nav-text">3. 浮动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-定位"><span class="nav-number">4.</span> <span class="nav-text">4. 定位</span></a></li></ol></div>
             
 
           </div>
@@ -949,7 +924,7 @@ float:right 向右浮动
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.9k字</span>
+  <span class="post-count">博客全站共11k字</span>
 </div>
 
 
@@ -1402,7 +1377,7 @@ float:right 向右浮动
         onPopupClose();
       }
     });
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
@@ -1423,6 +1398,43 @@ float:right 向右浮动
   
 
   
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
 
 
   
@@ -1432,6 +1444,26 @@ float:right 向右浮动
   
 
   
+  <script src="/js/src/js.cookie.js?v=6.7.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=6.7.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
 
   
 
