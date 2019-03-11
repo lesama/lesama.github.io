@@ -105,7 +105,7 @@
 <meta property="og:description" content="决策树决策树定义决策树（decision tree）是一种分类与回归方法，本文主要讨论用于分类的决策树，决策树的结构呈树形结构，在分类问题中，其代表基于特征对数据进行分类的过程，通常可以认为是if-then规则的集合，也可以认为是定义在特征空间与类空间上的条件概率分布。其主要优点是模型可读性好并且分类速度快。训练的时候，利用训练数据根据损失函数最小化的原则建立决策树模型。 预测时对于新的数据，利用">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-11-ml-DecisionTree/14.png">
-<meta property="og:updated_time" content="2019-03-11T11:20:26.602Z">
+<meta property="og:updated_time" content="2019-03-11T11:24:40.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-决策树和随机森林">
 <meta name="twitter:description" content="决策树决策树定义决策树（decision tree）是一种分类与回归方法，本文主要讨论用于分类的决策树，决策树的结构呈树形结构，在分类问题中，其代表基于特征对数据进行分类的过程，通常可以认为是if-then规则的集合，也可以认为是定义在特征空间与类空间上的条件概率分布。其主要优点是模型可读性好并且分类速度快。训练的时候，利用训练数据根据损失函数最小化的原则建立决策树模型。 预测时对于新的数据，利用">
@@ -439,7 +439,7 @@
                 
               
 
-              <time title="创建时间：2019-03-11 18:39:02 / 修改时间：19:20:26" itemprop="dateCreated datePublished" datetime="2019-03-11T18:39:02+08:00">2019-03-11</time>
+              <time title="创建时间：2019-03-11 18:39:02 / 修改时间：19:24:40" itemprop="dateCreated datePublished" datetime="2019-03-11T18:39:02+08:00">2019-03-11</time>
             
 
             
@@ -524,8 +524,9 @@
 <p>CART树的名字其实非常有意思，Classification And Regression Tree（分类回归树），它使用基尼系数(Gini Index)作为特征的划分依据。顾名思义，CART既可以用来做分类也可以用来做回归。它是在给定输入随机变量X条件下输出随机变量Y的条件概率分布的学习方法。  CART树假设我么的决策树是二叉树，内部节点特征的取值为是或否。</p>
 <p><strong>CART算法</strong>为：  </p>
 <pre><code>1. 决策树的生成：基于训练数据集生成决策树，生成的决策树要尽量大；
-</code></pre><p>​               2.决策树剪枝：用验证数据集对已经生成的巨额额数进行剪枝并选择最优子树。 </p>
-</li>
+
+2.决策树剪枝：用验证数据集对已经生成的巨额额数进行剪枝并选择最优子树。 
+</code></pre></li>
 </ol>
 <h2 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h2><p><strong>信息熵（information entropy）</strong> 是度量样本集合纯度的最常用的一种指标。</p>
 <ul>
