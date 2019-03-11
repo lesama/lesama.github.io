@@ -96,21 +96,20 @@
 
 
 
-  <meta name="description" content="线性回归-$y=wx+b$回归，统计学术语，表示变量之间的某种数量依存关系，并由此引出回归方程，回归系数。 线性回归（Linear Regression）数理统计中回归分析，用来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，其表达形式为$y = wx+e$，$e$为误差服从均值为0的正态分布，其中只有一个自变量的情况称为简单回归，多个自变量的情况叫多元回归。 注意，统计学中的回归并">
-<meta name="keywords" content="机器学习">
+  <meta name="description" content="决策树决策树定义决策树（decision tree）是一种分类与回归方法，本文主要讨论用于分类的决策树，决策树的结构呈树形结构，在分类问题中，其代表基于特征对数据进行分类的过程，通常可以认为是if-then规则的集合，也可以认为是定义在特征空间与类空间上的条件概率分布。其主要优点是模型可读性好并且分类速度快。训练的时候，利用训练数据根据损失函数最小化的原则建立决策树模型。 预测时对于新的数据，利用">
+<meta name="keywords" content="机器学习,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习-线性回归-数学推导">
-<meta property="og:url" content="https://lesama.github.io/2019-03-07-ml-linearRegression.html">
+<meta property="og:title" content="机器学习-决策树和随机森林">
+<meta property="og:url" content="https://lesama.github.io/2019-03-11-ml-DecisionTree.html">
 <meta property="og:site_name" content="嘿!楽">
-<meta property="og:description" content="线性回归-$y=wx+b$回归，统计学术语，表示变量之间的某种数量依存关系，并由此引出回归方程，回归系数。 线性回归（Linear Regression）数理统计中回归分析，用来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，其表达形式为$y = wx+e$，$e$为误差服从均值为0的正态分布，其中只有一个自变量的情况称为简单回归，多个自变量的情况叫多元回归。 注意，统计学中的回归并">
+<meta property="og:description" content="决策树决策树定义决策树（decision tree）是一种分类与回归方法，本文主要讨论用于分类的决策树，决策树的结构呈树形结构，在分类问题中，其代表基于特征对数据进行分类的过程，通常可以认为是if-then规则的集合，也可以认为是定义在特征空间与类空间上的条件概率分布。其主要优点是模型可读性好并且分类速度快。训练的时候，利用训练数据根据损失函数最小化的原则建立决策树模型。 预测时对于新的数据，利用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-07-ml-linearRegression/2.png">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-07-ml-linearRegression/3.png">
-<meta property="og:updated_time" content="2019-03-10T11:20:53.187Z">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-11-ml-DecisionTree/14.png">
+<meta property="og:updated_time" content="2019-03-11T11:20:26.602Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习-线性回归-数学推导">
-<meta name="twitter:description" content="线性回归-$y=wx+b$回归，统计学术语，表示变量之间的某种数量依存关系，并由此引出回归方程，回归系数。 线性回归（Linear Regression）数理统计中回归分析，用来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，其表达形式为$y = wx+e$，$e$为误差服从均值为0的正态分布，其中只有一个自变量的情况称为简单回归，多个自变量的情况叫多元回归。 注意，统计学中的回归并">
-<meta name="twitter:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-07-ml-linearRegression/2.png">
+<meta name="twitter:title" content="机器学习-决策树和随机森林">
+<meta name="twitter:description" content="决策树决策树定义决策树（decision tree）是一种分类与回归方法，本文主要讨论用于分类的决策树，决策树的结构呈树形结构，在分类问题中，其代表基于特征对数据进行分类的过程，通常可以认为是if-then规则的集合，也可以认为是定义在特征空间与类空间上的条件概率分布。其主要优点是模型可读性好并且分类速度快。训练的时候，利用训练数据根据损失函数最小化的原则建立决策树模型。 预测时对于新的数据，利用">
+<meta name="twitter:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-11-ml-DecisionTree/14.png">
 
 
 
@@ -119,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://lesama.github.io/2019-03-07-ml-linearRegression.html">
+  <link rel="canonical" href="https://lesama.github.io/2019-03-11-ml-DecisionTree.html">
 
 
 
@@ -129,7 +128,7 @@
   };
 </script>
 
-  <title>机器学习-线性回归-数学推导 | 嘿!楽</title>
+  <title>机器学习-决策树和随机森林 | 嘿!楽</title>
   
 
 
@@ -397,7 +396,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lesama.github.io/2019-03-07-ml-linearRegression.html">
+    <link itemprop="mainEntityOfPage" href="https://lesama.github.io/2019-03-11-ml-DecisionTree.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="楽">
@@ -414,7 +413,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">机器学习-线性回归-数学推导
+          <h2 class="post-title" itemprop="name headline">机器学习-决策树和随机森林
 
               
             
@@ -440,24 +439,12 @@
                 
               
 
-              <time title="创建时间：2019-03-07 19:14:30" itemprop="dateCreated datePublished" datetime="2019-03-07T19:14:30+08:00">2019-03-07</time>
+              <time title="创建时间：2019-03-11 18:39:02 / 修改时间：19:20:26" itemprop="dateCreated datePublished" datetime="2019-03-11T18:39:02+08:00">2019-03-11</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-10 19:20:53" itemprop="dateModified" datetime="2019-03-10T19:20:53+08:00">2019-03-10</time>
               
             
           </span>
@@ -516,118 +503,155 @@
       
 
       
-        <h1 id="线性回归-y-wx-b"><a href="#线性回归-y-wx-b" class="headerlink" title="线性回归-$y=wx+b$"></a><strong>线性回归</strong>-$y=wx+b$</h1><p><strong>回归</strong>，统计学术语，表示变量之间的某种数量依存关系，并由此引出回归方程，回归系数。</p>
-<h2 id="线性回归（Linear-Regression）"><a href="#线性回归（Linear-Regression）" class="headerlink" title="线性回归（Linear Regression）"></a><strong>线性回归（Linear Regression）</strong></h2><p>数理统计中回归分析，用来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，其表达形式为$y = wx+e$，$e$为误差服从均值为0的正态分布，其中只有一个自变量的情况称为简单回归，多个自变量的情况叫多元回归。</p>
-<p>注意，统计学中的回归并如线性回归非与严格直线函数完全能拟合，所以我们统计中称之为回归用以与其直线函数区别。 </p>
-<p>我们先来看下这个表格</p>
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>工资（元）</th>
-<th>房屋面积（平方）</th>
-<th>可贷款金额（元）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>张三</td>
-<td>6000</td>
-<td>58</td>
-<td>30000</td>
-</tr>
-<tr>
-<td>李四</td>
-<td>9000</td>
-<td>77</td>
-<td>55010</td>
-</tr>
-<tr>
-<td>王五</td>
-<td>11000</td>
-<td>89</td>
-<td>73542</td>
-</tr>
-</tbody>
-</table>
-<p> 这个是近期比较火的现金贷产品的贷款额度。这个表格表示的是<strong>可贷款的金额 </strong>与 <strong>工资 </strong>和 <strong>房屋面积</strong>之间的关系，其中 <strong>工资</strong> 和 <strong>房屋面积</strong> 为 特征，<strong>可贷款金额</strong>为目标函数值。  那么根据线性函数可得到以下公式。 </p>
-<p>$<br>h_\theta(x)=\theta_{1}x_{1}+\theta_{2}x_{2}<br>$</p>
-<p>上面的这个式子是当一个模型只有两个特征$(x_1,x_2)$的时候的线性回归式子。  正常情况下，现金贷中可贷款的额度和用户的很多特征相关联，并不只是简单的这两个特征。所以我们需要把这个式子进行通用化。  假如有n个特征的话，那么式子就会变成下面的样子  </p>
-<p>$<br>h_\theta(x)=\theta_{1}x_{1}+\theta_{2}x_{2} + \cdot \cdot \cdot \cdot \cdot+\theta_{n}x_{n} = \sum_{i=1}^{n}\theta_{i}x_{i}​<br>$</p>
-<p><strong>利用矩阵的知识对线性公式进行整合</strong></p>
-<p> 因为机器学习中基本上都是用矩阵的方式来表示参数的，也就是说我们需要把这个多项求和的式子用矩阵的方式表达出来，这样才方便后续的计算。  </p>
-<p>$\theta_{i \times 1} = [\theta_1,\theta_2,\cdot\cdot\cdot\theta_i,]$     </p>
-<p>$X_{i\times1}=[x_1,x_2,\cdot \cdot \cdot x_i]$</p>
-<p><strong>把上述线性函数写成矩阵相乘的形式</strong></p>
-<p>$<br>\theta^TX=\begin{bmatrix}  \theta_1 \\  \theta_2 \\ \cdot \\ \cdot \\ \cdot \\ \theta_i \end{bmatrix} \cdot [x_1,x_2,\cdot \cdot \cdot x_i] = \sum_{i=1}^{n}\theta_{i}x_{i}<br>​$<br>我们把权重参数和特征参数，都看成是1行n列的矩阵(或者是行向量)。那么就可以根据矩阵乘法的相关知识，把上述多项求和的式子，转换成矩阵的乘法的表达式。  由此我们就把多项求和化简称了 。</p>
-<p>$<br>h_\theta(x)=\theta^TX​<br>$</p>
-<h2 id="误差项的分析"><a href="#误差项的分析" class="headerlink" title="误差项的分析"></a>误差项的分析</h2><p>原式:$y =wx+b$ 其中$b$就是我们所说的偏移量，或者叫误差项。</p>
-<p>我们再看看下面这个图：</p>
-<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-07-ml-linearRegression/2.png" alt="image"></p>
-<p>图中的横坐标$x_1$ 和 X$x)_2$分别代表着 两个特征(工资、房屋平米) 。纵坐标Y代表目标(可贷款的额度)。其中红点代表的就是实际的目标值(每个人可贷款的额度).而平面上和红点竖向相交的点代表着我们根据线性回归模型得到的点。也就是说实际得到的钱和预估的钱之间是有一定误差的，这个就是误差项。  因为误差项是真实值和误差值之间的一个差距。那么肯定我们希望误差项越小越好。  </p>
-<p>然后我们对应整理成线性回归函数：</p>
-<p>$<br>h_\theta(x)=\theta^Tx+\varepsilon​<br>$</p>
-<p>我们根据实际情况，假设认为这个误差项是满足以下几个条件的。 </p>
-<ol>
-<li>误差$\varepsilon_{(i)}​$是独立。</li>
-<li>具有相同的分布。</li>
-<li>服从均值为0方差为$\theta^2$的高斯分布。</li>
+        <h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><h2 id="决策树定义"><a href="#决策树定义" class="headerlink" title="决策树定义"></a>决策树定义</h2><p><strong>决策树（decision tree）</strong>是一种<strong>分类</strong>与<strong>回归</strong>方法，本文主要讨论用于<strong>分类</strong>的决策树，决策树的结构呈<strong>树形</strong>结构，在分类问题中，其代表基于特征对数据进行分类的过程，通常可以认为是if-then规则的集合，也可以认为是定义在<strong>特征空间与类空间上的条件概率分布</strong>。其主要优点是模型可读性好并且分类速度快。训练的时候，利用训练数据根据损失函数最小化的原则建立决策树模型。</p>
+<p>预测时对于新的数据，利用决策树进行分类。决策树的学习通常包括三个步骤：<strong>特征选择，生成决策树，对决策树进行剪枝</strong>。这些决策树的思想主要来自Quinlan在1986年提出的ID3算法和1993年提出的C4.5算法，以及Breiman等人在1984年提出的CART算法。 </p>
+<p>用于分类的决策树是一种对数据进行分类的树形结构。决策树主要由节点（node）和有向边（directed edge）组成。节点有两种类型：内部节点（internal node）以及叶节点（leaf node）。内部节点表示一个特征或者属性，叶节点表示一个类。其结构如图所示：  </p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-11-ml-DecisionTree/14.png" alt="image"></p>
+<p>决策树学习采用的是<strong>自顶向下</strong>的递归方法, 其基本思想是以<strong>信息熵</strong>为度量构造一棵<strong>熵值 下降最快</strong>的树,到叶子节点处的熵值为零, 此时每个叶节点中的实例都属于同一类。</p>
+<ul>
+<li>最大优点: 可以自学习。在学习的过程中,不需要使用者了解过多背景知识,只需要对训练实例进行较好的标注,就能够进行学习。</li>
+<li>显然,属于<strong>有监督学习</strong>。</li>
+</ul>
+<h2 id="决策树三种生成算法"><a href="#决策树三种生成算法" class="headerlink" title="决策树三种生成算法"></a>决策树三种生成算法</h2><ol>
+<li><h3 id="ID3-—-信息增益-最大的准则"><a href="#ID3-—-信息增益-最大的准则" class="headerlink" title="ID3 — 信息增益 最大的准则"></a>ID3 — <strong>信息增益</strong> <strong>最大</strong>的准则</h3><p>​    ID3算法的核心是在决策树各个节点上使用<strong>信息增益</strong>作为特征选择的依据，递归的构建决策树。  从根节点开始，对节点计算所有可能的特征的信息增益，选择信息增益最大的特征作为节点的特征，由该特征的不同取值建立子节点；再对子节点递归的调用以上方法，构建决策树；知道所有特征的信息增益均很小或没有特征可以选择为止，得到最后一个决策树。ID3相当于用最大似然法进行概率模型的选择。 </p>
+</li>
+<li><h3 id="C4-5-—-信息增益比-最大的准则"><a href="#C4-5-—-信息增益比-最大的准则" class="headerlink" title="C4.5 — 信息增益比 最大的准则"></a>C4.5 — <strong>信息增益比</strong> 最大的准则</h3><p>​    C4.5算法使用<strong>信息增益率</strong>作为特征选择的依据，算法的流程与ID3相似。 </p>
+</li>
+<li><h3 id="CART"><a href="#CART" class="headerlink" title="CART"></a>CART</h3><ul>
+<li>回归树: <strong>平方误差</strong> <strong>最小</strong> 的准则</li>
+<li>分类树: <strong>基尼系数</strong> <strong>最小</strong>的准则</li>
+</ul>
+<p>CART树的名字其实非常有意思，Classification And Regression Tree（分类回归树），它使用基尼系数(Gini Index)作为特征的划分依据。顾名思义，CART既可以用来做分类也可以用来做回归。它是在给定输入随机变量X条件下输出随机变量Y的条件概率分布的学习方法。  CART树假设我么的决策树是二叉树，内部节点特征的取值为是或否。</p>
+<p><strong>CART算法</strong>为：  </p>
+<pre><code>1. 决策树的生成：基于训练数据集生成决策树，生成的决策树要尽量大；
+</code></pre><p>​               2.决策树剪枝：用验证数据集对已经生成的巨额额数进行剪枝并选择最优子树。 </p>
+</li>
 </ol>
-<p>然我们回到刚开始的现金贷产品的贷款额度问题上面</p>
-<p>  1.独立：张三和李四一起使用这款产品，可贷款额互不影响  </p>
-<p>  2.同分布：张三和李四是使用的是同一款产品  </p>
-<p>  3.高斯分布：绝大多数的情况下，在一个的空间内浮动不大 </p>
-<h1 id="似然函数的理解"><a href="#似然函数的理解" class="headerlink" title="似然函数的理解"></a>似然函数的理解</h1><p>由前面两步，我们已经把线性回归模型，推导成下面的这个式子了 </p>
-<p>$y_{(i)}=\theta^Tx_i+\varepsilon_i$</p>
-<p>我们已经知道误差项是符合高斯分布的，所以误差项的概率值：</p>
-<p>$<br>P(\varepsilon_i)=\frac{1}{\sqrt{2\pi}\sigma}e^{-(\frac{(\varepsilon_i)^2}{2\sigma^2})}<br>$<br>然后把误差值带入式子中:</p>
-<p>$<br>P(y_i|x_i,\theta)=\frac{1}{\sqrt{2\pi}\sigma}e^{-(\frac{(y_i-\theta^Tx_i)^2}{2\sigma^2})}​<br>$<br>由于是误差值，所以是越小越好，所以我们接下来就是讨论什么样的特征值和特征组合能够让误差值最小，现在就要看似然函数的作用了，似然函数的作用就是要根据样本求什么样的参数和特征的组成能够接近真实值，所以越接近真实值则误差就越小。</p>
-<p>引入似然函数(似然函数就是求能让真实值和预测值相等的那个参数的 )：</p>
-<p>$<br>L(\theta) = \prod_{i=1}^{N} P(y_i|x_i,\theta)=\prod_{i=1}^{N}\frac{1}{\sqrt{2\pi}\sigma}e^{-(\frac{(y_i-\theta^Tx_i)^2}{2\sigma^2})}<br>$</p>
-<p>$\prod​$表示各元素相乘的结果</p>
-<p>上面的式子是多个参数的乘积的形式，很难进行计算，所以我们又采用了对数的一个小技巧，把多个数相乘，转化成多个数相加的形式。 </p>
-<p>因为对数的性质</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logA\cdot B = logA+logB​</span><br></pre></td></tr></table></figure>
-<p>根据上面的这种换算关系，我们就把似然函数的式子换算成下面的这个。  (因为似然函数是越大越好，似然函数的值和对数似然函数的值是成正比的，对值求对数，并不会影响到最后求极限的值。所以才敢进行对数处理。)  </p>
-<p>$<br>l(\theta) = logL(\theta) = log\prod_{i=1}^{N}\frac{1}{\sqrt{2\pi}\sigma}e^{-(\frac{(y_i-\theta^Tx_i)^2}{2\sigma^2})}​<br>$<br>对上式进行整理：</p>
-<p>$l(\theta) = logL(\theta) = \sum_{i=1}^{N}log\frac{1}{\sqrt{2\pi}\sigma}e^{-(\frac{(y_i-\theta^Tx_i)^2}{2\sigma^2})}$</p>
-<p>$= \sum_{i=1}^{N}(log\frac{1}{\sqrt{2\pi}\sigma}+loge^{-(\frac{(y_i-\theta^Tx_i)^2}{2\sigma^2})})​$</p>
-<p>$= Nlog\frac{1}{\sqrt{2\pi}\sigma}-\frac{1}{2\sigma^2}\sum_{i=1}^{N}(y_i-\theta^Tx_i)^2 $</p>
-<p>因为：</p>
-<p>$Nlog\frac{1}{\sqrt{2\pi}\sigma}​$ 是一个定值</p>
-<p>似然函数是要越大越好</p>
-<p>所以：</p>
-<p>$-\frac{1}{2\sigma^2}(y_i-\theta^Tx_i)^2$越小越好</p>
-<p>再因为：</p>
-<p>$-\frac{1}{2\sigma^2}​$也为定值</p>
-<p>最终：</p>
-<p>$<br>l(\theta) = \sum_{i=1}^{N}(y_i-\theta^Tx_i)^2​<br>$</p>
-<h2 id="越小越好——最小二乘法（损失函数）"><a href="#越小越好——最小二乘法（损失函数）" class="headerlink" title="越小越好——最小二乘法（损失函数）"></a>越小越好——最小二乘法（损失函数）</h2><h3 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a><strong>最小二乘法</strong></h3><p>$<br>\sum_{i=1}^{N}(y_i-\theta^Tx_i)^2<br>$</p>
-<p>上述代价函数中使用的均方误差，其实对应了我们常用的欧几里得的距离（欧式距离，<strong>Euclidean Distance</strong>）, 基于均方误差最小化进行模型求解的方法称为“最小二乘法”（<strong>least square method</strong>），即通过最小化误差的平方和寻找数据的最佳函数匹配；</p>
-<p>当函数子变量为一维时，最小二乘法就蜕变成寻找一条直线；</p>
-<p> 然后我们把得到的损失函数推广到n维，转换成矩阵形式（参考前面利用矩阵的知识对线性公式进行整合）：</p>
-<p><strong>$J(\theta)=\sum_{i=1}^{N}(y_i-\theta^Tx_i)^2​$       为损失函数</strong></p>
-<p>其对应的均方误差表示为如下矩阵</p>
-<p><strong><em>$J(\theta) = {(y-X\theta)^T(y-X\theta)}​$</em></strong>   </p>
-<p><strong>其中X：</strong></p>
-<p>$X=\begin{bmatrix} 1 &amp;&amp; x_1^T  \\ 1 &amp;&amp; x_2^T  \\ \cdot \\ \cdot \\ \cdot  \\ 1 &amp;&amp; x_N^T \end{bmatrix} =\begin{bmatrix} 1 &amp;&amp;    x_{11} &amp;&amp; x_{12}  &amp;&amp; \cdot \cdot \cdot  x_{1n}  \\ 1 &amp;&amp; x_{21} &amp;&amp; x_{22} &amp;&amp; \cdot \cdot \cdot x_{2n}   \\ \cdot  \\  \cdot \\ \cdot \\ 1&amp;&amp; x_{m1} &amp;&amp; x_{m2}  &amp;&amp; \cdot \cdot \cdot x_{mn}  \end{bmatrix} ​$</p>
-<p> 对$\theta​$求导</p>
-<p><strong>$J(\theta) = {(y-X\theta)^T(y-X\theta)}=y^Ty-y^Tx\theta-\theta^Tx^Ty+\theta^Tx^Tx\theta​$</strong>   </p>
-<p>$\frac{\partial J(\theta)}{\partial(\theta)} = \frac{\partial y^Ty}{\partial(\theta)} - \frac{\partial y^Tx\theta}{\partial(\theta)} - \frac{\partial \theta^Tx^Ty}{\partial(\theta)} + \frac{\partial \theta^Tx^Tx\theta}{\partial(\theta)} ​$</p>
-<p>$\frac{\partial J(\theta)}{\partial(\theta)} = 0-x^Ty-x^Ty+2x^Tx\theta​$</p>
-<p>$\frac{\partial J(\theta)}{\partial(\theta)} =2x^T(x\theta-y)​$</p>
-<p>根据导数的性质，该值在导数为0时为最小</p>
-<p>所以：根据微积分定理，令上式等于零，可以得到 θ 最优的闭式解。当 </p>
-<p>$2(x^Ty-x^Tx\theta)=0$时取得最小</p>
-<p>矩阵求导的知识：</p>
-<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-07-ml-linearRegression/3.png" alt="image"></p>
-<p><strong>最终：</strong><br>$<br>\theta = (x^Tx)^{-1}x^Ty​<br>$</p>
-<p>X和Y都是已知的，那么得到了最终的参数值。 </p>
-<h2 id="我们来看看数学原理"><a href="#我们来看看数学原理" class="headerlink" title="我们来看看数学原理"></a>我们来看看<strong>数学原理</strong></h2><p><strong>微积分角度来讲</strong>，最小二乘法是采用非迭代法，针对代价函数求导数而得出全局极值，进而对所给定参数进行估算。</p>
-<p><strong>计算数学角度来讲</strong>，最小二乘法的本质上是一个线性优化问题，试图找到一个最优解。</p>
-<p><strong>线性代数角度来讲</strong>，最小二乘法是求解线性方程组，当方程个数大于未知量个数，其方程本身 无解，而最小二乘法则试图找到最优残差。</p>
-<p><strong>几何角度来讲</strong>，最小二乘法中的几何意义是高维空间中的一个向量在低维子空间的投影。</p>
-<p><strong>概率论角度来讲</strong>，如果数据的观测误差是/或者满足高斯分布，则最小二乘解就是使得观测数据出现概率最大的解，即<strong>最大似然估计-Maximum Likelihood Estimate，MLE</strong>（利用已知的样本结果，反推最有可能（最大概率）导致这样结果的参数值）。</p>
+<h2 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h2><p><strong>信息熵（information entropy）</strong> 是度量样本集合纯度的最常用的一种指标。</p>
+<ul>
+<li><p><strong>熵：$H(X)=-\sum_{x \in X} p(x,y)logp(x)$</strong></p>
+</li>
+<li><p><strong>联合熵：$H(X，Y)=-\sum_{x \in X,y \in Y} p(x,y)logp(x,y)$</strong></p>
+</li>
+<li><p><strong>条件熵：$H(X|Y)=-\sum_{x \in X,y \in Y} p(x,y)logp(x|y)$</strong></p>
+</li>
+<li><p><strong>相对熵：$D(p||q)=\sum_x p(x)log\frac{p(x)}{q(x)}$</strong></p>
+</li>
+<li><p><strong>互信息：$I(x,y)=\sum_{x\in X, y \in Y} p(x,y )log\frac{p(x,y)}{p(x)p(y)}$</strong></p>
+</li>
+</ul>
+<h2 id="决策树学习基本算法"><a href="#决策树学习基本算法" class="headerlink" title="决策树学习基本算法"></a>决策树学习基本算法</h2><ul>
+<li><strong>输入</strong>：训练集$D={(x_1,y_1),(x_2,y_2),…,(x_m,y_m)}$;<br>  属性值$A={a_1,a_2,…,a_d}$</li>
+<li><strong>过程</strong>：函数$TreeGenerate(D,A)$</li>
+</ul>
+<ol>
+<li>生成结点$node$；</li>
+<li>$if$  $D$中样本全属于同一类别$C$ $then$</li>
+<li>​    将$node​$标记为C类结点； $return​$</li>
+<li>$end$ $if$</li>
+<li>$if$ $A=$$\varnothing$ $OR$ $D$ 中样本在$A$上取值相同 $then$</li>
+<li>​    将$node$标记为叶节点，其类别标记为$D$中样本数最多的类；$return$</li>
+<li>$end if$</li>
+<li>从$A$中选择最优划分属性$a_*$；</li>
+<li>$for$ $a_<em>$的每一个值$a^v_</em>$ $do$</li>
+<li>​    为$node$生成一个分支；令$D_v$表示$D$中在$a_<em>$上取值为$a^v_</em>$的样本子集；</li>
+<li>​    if $D_v$为空 $then$</li>
+<li>​        将分支结点标记为叶节点，其类别标记为D中样本最多的类；$return$</li>
+<li>​    $else$</li>
+<li>​        以$TreeGenerate$（$D_v$,A\{$a_*$}）​为分支结点</li>
+<li>​    $end$ $if​$</li>
+<li>$end​$ $for​$</li>
+</ol>
+<ul>
+<li><strong>输出</strong>：以$node$为根结点的一颗决策树</li>
+</ul>
+<h2 id="信息增益—-g-D-A"><a href="#信息增益—-g-D-A" class="headerlink" title="信息增益—$g(D,A)$"></a>信息增益—$g(D,A)$</h2><p><strong>信息增益(Information Gain)</strong>：表示得知特征A的信息而使得类X的信息的不确定性减少的程度。<br>定义：特征A对训练数据集D的<strong>信息增益</strong>g(D, A)，定义为集合D的<strong>经验熵</strong>H(D)与<strong>经验条件熵</strong>H(D|A)的差值。 </p>
+<p>$$<br>g(D,A)=H(D)−H(D|A)​<br>$$<br>而这又是互信息的定义。所以<strong>决策树中的信息增益等价于训练集中类与特征的互信息。</strong></p>
+<p><em>总结</em>：一般而言，<strong>信息增益</strong>g(D, A)越大，就意味着使用特征A来进行划分所获得的“纯度提升”就越大。著名的ID3决策树学习算法就是以信息增益为准则来学习划分属性的。</p>
+<h2 id="增益率"><a href="#增益率" class="headerlink" title="增益率"></a>增益率</h2><p><strong>信息率(Information Gain Ratio)</strong>：  用信息增益作为划分特征的依据时，会存在一些问题。例如，如果使用数据的ID作为特征，这样，每个数据点相当于均匀分布，所以得到的信息增益一定是最大的，但是我们都知道ID是不能作为特征的。这样如果单纯的使用信息增益作为划分特征的依据的话，会导致我们生成的树比较矮胖，容易<strong>过拟合</strong>。 </p>
+<p>定义：特征A对训练数据集D的<strong>信息增益率</strong>$$gR(D,A)​$$定义为其<strong>信息增益</strong>$$g(D,A)​$$与训练数据集D关于特征A的值得<strong>信息熵</strong>$$IV(D)​$$之比：</p>
+<p>$$<br> gR(D,A)=\frac {g(D,A)}{IV(D)}<br>$$<br><strong>总结：信息增益准则对可取值数目较多的属性有所偏好，为减少这种偏好可能带来的不利影响，著名的C4.5决策树算法就不直接使用信息增益而是使用“增益率” 。</strong></p>
+<h2 id="Gini系数："><a href="#Gini系数：" class="headerlink" title="Gini系数："></a>Gini系数：</h2><p><strong>数据集P的纯度可以用Gini值来度量。</strong><br>$$<br>Gini(P)=\sum_{k=1}^K p_k(1-p_k)=1-\sum_{k=1}^Kp_k^2<br>$$</p>
+<p><strong>总结：CART决策树使用Gini指数来选择划分属性。$Gini(P)$反映了从数据集D中随机抽取了两个样本，其类别标记不一致的概率，因此，$Gini（D）$越小，则数据集P的纯度就越高。</strong></p>
+<h2 id="决策树的评价-——-loss-function："><a href="#决策树的评价-——-loss-function：" class="headerlink" title="决策树的评价 —— loss function："></a>决策树的评价 —— loss function：</h2><p>  假定样本的总类别数为$K$个；树T的叶节点个数为$\mid T \mid$，t是树T的叶节点，叶节点有$N_t$个样本点，其中$k$类的样本点有$N_{ik}$个，$H_t(T)$为叶节点t上的<strong>经验熵</strong>，则决策树的loss function可以定义为：  </p>
+<p>$$<br>C_a(T)=\sum_{t\in Leaf}N_tH_t(T)+a|T|​<br>$$</p>
+<h2 id="决策树种避免过拟合的方法——剪枝"><a href="#决策树种避免过拟合的方法——剪枝" class="headerlink" title="决策树种避免过拟合的方法——剪枝"></a>决策树种避免过拟合的方法——剪枝</h2><ul>
+<li><strong>预剪枝</strong>：在决策树生成过程中，对每个结点在划分前先进行估计，如果当前的结点划分不能带来决策树泛化性能提升，则停止划分并将当前的结点标记为叶节点。</li>
+<li><strong>后剪枝</strong>：先从训练集生成一个完整的决策树，然后自底向上的对非叶节点进行考察，若将该结点对应的子树替换为叶节点能带来决策树泛化能力性能提升，则就把该子树替换为叶结点。</li>
+</ul>
+<h3 id="决策树的评价指标"><a href="#决策树的评价指标" class="headerlink" title="决策树的评价指标"></a>决策树的评价指标</h3><p><strong>在上面的决策树的评价指标loss function ：$C_a(T)=\sum_{t\in Leaf}N_tH_t(T)+a|T|$中，</strong></p>
+<ul>
+<li><p>C(T)表示模型对训练数据集的预测误差，即模型与训练数据的拟合程度，</p>
+</li>
+<li><p>$\mid T \mid​$表示模型复杂度，由参数α控制两者之间的影响。 </p>
+</li>
+</ul>
+<h4 id="当α确定时："><a href="#当α确定时：" class="headerlink" title="当α确定时："></a>当α确定时：</h4><ul>
+<li>子树越大，与训练集的拟合越好，但模型的复杂度就越高；</li>
+<li>子树越小，模型简单，但与训练集的拟合度不好。</li>
+</ul>
+<h3 id="决策树生成学习局部的模型，而剪枝学习整体的模型"><a href="#决策树生成学习局部的模型，而剪枝学习整体的模型" class="headerlink" title="决策树生成学习局部的模型，而剪枝学习整体的模型!"></a>决策树生成学习局部的模型，而剪枝学习整体的模型!</h3><h4 id="剪枝的过程为："><a href="#剪枝的过程为：" class="headerlink" title="剪枝的过程为："></a>剪枝的过程为：</h4><ul>
+<li>计算每个节点的经验熵；</li>
+<li>递归的从树的叶节点向上回缩，设一组叶节点回缩到其父节点之前和之后的整体树分别为$T_B$和$T_A$，对应的损失函数值分别为$C_α(T_B)$和$C_α(T_A),$如果$C_α(T_A)&lt;=C_α(T_B)$，则进行剪枝。</li>
+</ul>
+<h2 id="决策树的优缺点"><a href="#决策树的优缺点" class="headerlink" title="决策树的优缺点"></a>决策树的优缺点</h2><ul>
+<li>优点: 决策树对训练属于有很好的分类能力</li>
+<li>缺点: 但对未知的测试数据未必有好的分类能力,泛化 能力弱,即可能发生过拟合现象。 </li>
+</ul>
+<h2 id="Bagging（套袋法）"><a href="#Bagging（套袋法）" class="headerlink" title="Bagging（套袋法）"></a>Bagging（套袋法）</h2><p>bagging的算法过程如下：</p>
+<ol>
+<li>从原始样本集中使用Bootstraping方法随机抽取n个训练样本，共进行k轮抽取，得到k个训练集。（k个训练集之间相互独立，元素可以有重复）</li>
+<li>对于k个训练集，我们训练k个模型（这k个模型可以根据具体问题而定，比如决策树，knn等）</li>
+<li>对于分类问题：由投票表决产生分类结果；对于回归问题：由k个模型预测结果的均值作为最后预测结果。（所有模型的重要性相同）</li>
+</ol>
+<h2 id="Boosting（提升法）"><a href="#Boosting（提升法）" class="headerlink" title="Boosting（提升法）"></a>Boosting（提升法）</h2><p>boosting的算法过程如下：</p>
+<ol>
+<li>对于训练集中的每个样本建立权值wi，表示对每个样本的关注度。当某个样本被误分类的概率很高时，需要加大对该样本的权值。</li>
+<li>进行迭代的过程中，每一步迭代都是一个弱分类器。我们需要用某种策略将其组合，作为最终模型。（例如AdaBoost给每个弱分类器一个权值，将其线性组合最为最终分类器。误差越小的弱分类器，权值越大）</li>
+</ol>
+<h2 id="Bagging，Boosting的主要区别"><a href="#Bagging，Boosting的主要区别" class="headerlink" title="Bagging，Boosting的主要区别"></a>Bagging，Boosting的主要区别</h2><ol>
+<li><p>样本选择上：</p>
+<p>Bagging采用的是Bootstrap随机有放回抽样；</p>
+<p>Boosting每一轮的训练集是不变的，改变的只是每一个样本的权重。</p>
+</li>
+<li><p>样本权重：</p>
+<p>Bagging使用的是均匀取样，每个样本权重相等；</p>
+<p>Boosting根据错误率调整样本权重，错误率越大的样本权重越大。</p>
+</li>
+<li><p>预测函数：</p>
+<p>Bagging所有的预测函数的权重相等；</p>
+<p>Boosting中误差越小的预测函数其权重越大。</p>
+</li>
+<li><p>并行计算：</p>
+<p>Bagging各个预测函数可以并行生成；</p>
+<p>Boosting各个预测函数必须按顺序迭代生成。</p>
+</li>
+</ol>
+<h2 id="决策树与这些算法框架进行结合所得到的新的算法："><a href="#决策树与这些算法框架进行结合所得到的新的算法：" class="headerlink" title="决策树与这些算法框架进行结合所得到的新的算法："></a>决策树与这些算法框架进行结合所得到的新的算法：</h2><p>1）Bagging + 决策树 = 随机森林</p>
+<p>2）AdaBoost + 决策树 = 提升树</p>
+<p>3）Gradient Boosting + 决策树 = GBDT</p>
+<h1 id="随机森林（Random-Forests）"><a href="#随机森林（Random-Forests）" class="headerlink" title="随机森林（Random Forests）"></a>随机森林（Random Forests）</h1><p>随机森林是一种重要的基于Bagging的集成学习方法，可以用来做分类、回归等问题。</p>
+<h2 id="随机森林的优点："><a href="#随机森林的优点：" class="headerlink" title="随机森林的优点："></a>随机森林的优点：</h2><ul>
+<li>具有极高的准确率</li>
+<li>随机性的引入，使得随机森林不容易过拟合</li>
+<li>随机性的引入，使得随机森林有很好的抗噪声能力</li>
+<li>能处理很高维度的数据，并且不用做特征选择</li>
+<li>既能处理离散型数据，也能处理连续型数据，数据集无需规范化</li>
+<li>训练速度快，可以得到变量重要性排序</li>
+<li>容易实现并行化</li>
+</ul>
+<h2 id="随机森林的缺点："><a href="#随机森林的缺点：" class="headerlink" title="随机森林的缺点："></a>随机森林的缺点：</h2><ul>
+<li>当随机森林中的决策树个数很多时，训练时需要的空间和时间会较大</li>
+<li>随机森林模型还有许多不好解释的地方，有点算个黑盒模型</li>
+</ul>
+<h2 id="随机森林的构建过程"><a href="#随机森林的构建过程" class="headerlink" title="随机森林的构建过程"></a>随机森林的构建过程</h2><p>与上面介绍的Bagging过程相似，<strong>随机森林的构建过程大致如下</strong>：</p>
+<ol>
+<li>从原始训练集中使用Bootstraping方法随机有放回采样选出m个样本，共进行n_tree次采样，生成n_tree个训练集</li>
+<li>对于n_tree个训练集，我们分别训练n_tree个决策树模型</li>
+<li>对于单个决策树模型，假设训练样本特征的个数为n，那么每次分裂时根据信息增益/信息增益比/基尼指数选择最好的特征进行分裂</li>
+<li>每棵树都一直这样分裂下去，直到该节点的所有训练样例都属于同一类。在决策树的分裂过程中不需要剪枝</li>
+<li>将生成的多棵决策树组成随机森林。对于分类问题，按多棵树分类器投票决定最终分类结果；对于回归问题，由多棵树预测值的均值决定最终预测结果</li>
+</ol>
 
       
     </div>
@@ -682,6 +706,8 @@
           
             <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
           
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
         </div>
       
 
@@ -693,8 +719,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/python-numerical-sequence.html" rel="next" title="数值类型与序列类型">
-                <i class="fa fa-chevron-left"></i> 数值类型与序列类型
+              <a href="/2019-03-10-ml-linearRegression-python.html" rel="next" title="机器学习-线性回归算法python实现">
+                <i class="fa fa-chevron-left"></i> 机器学习-线性回归算法python实现
               </a>
             
           </div>
@@ -702,10 +728,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019-03-08-ml-linearRegressionL1L2.html" rel="prev" title="机器学习-线性回归-推导总结">
-                机器学习-线性回归-推导总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -942,7 +964,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性回归-y-wx-b"><span class="nav-number">1.</span> <span class="nav-text">线性回归-$y=wx+b$</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归（Linear-Regression）"><span class="nav-number">1.1.</span> <span class="nav-text">线性回归（Linear Regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#误差项的分析"><span class="nav-number">1.2.</span> <span class="nav-text">误差项的分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#似然函数的理解"><span class="nav-number">2.</span> <span class="nav-text">似然函数的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#越小越好——最小二乘法（损失函数）"><span class="nav-number">2.1.</span> <span class="nav-text">越小越好——最小二乘法（损失函数）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法"><span class="nav-number">2.1.1.</span> <span class="nav-text">最小二乘法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们来看看数学原理"><span class="nav-number">2.2.</span> <span class="nav-text">我们来看看数学原理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">1.</span> <span class="nav-text">决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树定义"><span class="nav-number">1.1.</span> <span class="nav-text">决策树定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树三种生成算法"><span class="nav-number">1.2.</span> <span class="nav-text">决策树三种生成算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ID3-—-信息增益-最大的准则"><span class="nav-number">1.2.1.</span> <span class="nav-text">ID3 — 信息增益 最大的准则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C4-5-—-信息增益比-最大的准则"><span class="nav-number">1.2.2.</span> <span class="nav-text">C4.5 — 信息增益比 最大的准则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CART"><span class="nav-number">1.2.3.</span> <span class="nav-text">CART</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息熵"><span class="nav-number">1.3.</span> <span class="nav-text">信息熵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树学习基本算法"><span class="nav-number">1.4.</span> <span class="nav-text">决策树学习基本算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息增益—-g-D-A"><span class="nav-number">1.5.</span> <span class="nav-text">信息增益—$g(D,A)$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增益率"><span class="nav-number">1.6.</span> <span class="nav-text">增益率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gini系数："><span class="nav-number">1.7.</span> <span class="nav-text">Gini系数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树的评价-——-loss-function："><span class="nav-number">1.8.</span> <span class="nav-text">决策树的评价 —— loss function：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树种避免过拟合的方法——剪枝"><span class="nav-number">1.9.</span> <span class="nav-text">决策树种避免过拟合的方法——剪枝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树的评价指标"><span class="nav-number">1.9.1.</span> <span class="nav-text">决策树的评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#当α确定时："><span class="nav-number">1.9.1.1.</span> <span class="nav-text">当α确定时：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树生成学习局部的模型，而剪枝学习整体的模型"><span class="nav-number">1.9.2.</span> <span class="nav-text">决策树生成学习局部的模型，而剪枝学习整体的模型!</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#剪枝的过程为："><span class="nav-number">1.9.2.1.</span> <span class="nav-text">剪枝的过程为：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树的优缺点"><span class="nav-number">1.10.</span> <span class="nav-text">决策树的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bagging（套袋法）"><span class="nav-number">1.11.</span> <span class="nav-text">Bagging（套袋法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boosting（提升法）"><span class="nav-number">1.12.</span> <span class="nav-text">Boosting（提升法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bagging，Boosting的主要区别"><span class="nav-number">1.13.</span> <span class="nav-text">Bagging，Boosting的主要区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树与这些算法框架进行结合所得到的新的算法："><span class="nav-number">1.14.</span> <span class="nav-text">决策树与这些算法框架进行结合所得到的新的算法：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林（Random-Forests）"><span class="nav-number">2.</span> <span class="nav-text">随机森林（Random Forests）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#随机森林的优点："><span class="nav-number">2.1.</span> <span class="nav-text">随机森林的优点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机森林的缺点："><span class="nav-number">2.2.</span> <span class="nav-text">随机森林的缺点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机森林的构建过程"><span class="nav-number">2.3.</span> <span class="nav-text">随机森林的构建过程</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1114,7 +1136,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019-03-07-ml-linearRegression.html'
+    refer: '2019-03-11-ml-DecisionTree.html'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
