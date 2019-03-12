@@ -2,9 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lesama.github.io/JavaScript-01.html</loc>
+    
+    <lastmod>2019-03-12T10:59:06.748Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lesama.github.io/2019-03-12-ml-logisticRegression.html</loc>
+    
+    <lastmod>2019-03-12T10:58:12.031Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lesama.github.io/2019-03-10-ml-linearRegression-python.html</loc>
+    
+    <lastmod>2019-03-12T10:41:28.068Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lesama.github.io/2019-03-11-ml-DecisionTree.html</loc>
     
-    <lastmod>2019-03-11T11:24:40.460Z</lastmod>
+    <lastmod>2019-03-12T10:41:23.076Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lesama.github.io/css-01.html</loc>
+    
+    <lastmod>2019-03-12T10:41:12.319Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lesama.github.io/css-02.html</loc>
+    
+    <lastmod>2019-03-12T10:41:06.500Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lesama.github.io/html.html</loc>
+    
+    <lastmod>2019-03-12T10:40:58.464Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lesama.github.io/JavaScript-02.html</loc>
+    
+    <lastmod>2019-03-12T10:40:48.725Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lesama.github.io/JavaScript-03.html</loc>
+    
+    <lastmod>2019-03-12T10:40:43.733Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lesama.github.io/JQuery.html</loc>
+    
+    <lastmod>2019-03-12T10:40:38.571Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lesama.github.io/python-numerical-sequence.html</loc>
+    
+    <lastmod>2019-03-12T10:40:33.169Z</lastmod>
     
   </url>
   
@@ -19,62 +89,6 @@
     <loc>https://lesama.github.io/2019-03-07-ml-linearRegression.html</loc>
     
     <lastmod>2019-03-10T11:20:53.187Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/2019-03-10-ml-linearRegression-python.html</loc>
-    
-    <lastmod>2019-03-10T11:11:09.478Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/css-01.html</loc>
-    
-    <lastmod>2019-03-07T12:31:13.887Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/css-02.html</loc>
-    
-    <lastmod>2019-03-07T12:31:07.966Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/JavaScript-01.html</loc>
-    
-    <lastmod>2019-03-07T12:30:55.813Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/JavaScript-02.html</loc>
-    
-    <lastmod>2019-03-07T12:30:49.659Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/JavaScript-03.html</loc>
-    
-    <lastmod>2019-03-07T12:30:44.351Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/JQuery.html</loc>
-    
-    <lastmod>2019-03-07T12:30:38.549Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/python-numerical-sequence.html</loc>
-    
-    <lastmod>2019-03-07T12:30:32.558Z</lastmod>
     
   </url>
   
@@ -103,13 +117,6 @@
     <loc>https://lesama.github.io/lib/canvas-nest/README.html</loc>
     
     <lastmod>2019-03-02T16:39:29.721Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/html.html</loc>
-    
-    <lastmod>2019-02-17T02:55:59.316Z</lastmod>
     
   </url>
   
