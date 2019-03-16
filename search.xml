@@ -83,10 +83,10 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>web</tag>
-        <tag>网页</tag>
         <tag>jq</tag>
         <tag>html</tag>
+        <tag>web</tag>
+        <tag>网页</tag>
       </tags>
   </entry>
   <entry>
@@ -97,10 +97,10 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>js</tag>
-        <tag>JavaScript</tag>
         <tag>web</tag>
         <tag>网页</tag>
+        <tag>js</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -111,10 +111,10 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>js</tag>
-        <tag>JavaScript</tag>
         <tag>web</tag>
         <tag>网页</tag>
+        <tag>js</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -125,10 +125,10 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>js</tag>
-        <tag>JavaScript</tag>
         <tag>web</tag>
         <tag>网页</tag>
+        <tag>js</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -139,9 +139,9 @@
         <category>web</category>
       </categories>
       <tags>
+        <tag>html</tag>
         <tag>web</tag>
         <tag>网页</tag>
-        <tag>html</tag>
         <tag>css</tag>
       </tags>
   </entry>
@@ -153,9 +153,9 @@
         <category>web</category>
       </categories>
       <tags>
+        <tag>html</tag>
         <tag>web</tag>
         <tag>网页</tag>
-        <tag>html</tag>
         <tag>css</tag>
       </tags>
   </entry>
@@ -167,9 +167,9 @@
         <category>web</category>
       </categories>
       <tags>
+        <tag>html</tag>
         <tag>web</tag>
         <tag>网页</tag>
-        <tag>html</tag>
       </tags>
   </entry>
 </search>
