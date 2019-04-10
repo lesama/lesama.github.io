@@ -97,27 +97,32 @@
 
 
 
-  <meta name="description" content="逻辑回归逻辑回归的概念Logistic Regression 在《机器学习》-周志华一书中又叫对数几率回归。逻辑回归和多重线性回归实际上有很多的相同之处，除了它们的因变量（函数）不同外，其他的基本差不多，所以逻辑回归和线性回归又统属于广义线性模型（generalizedlinear  model）。 广义线性模型的形式其实都差不多，不同的就是因变量（函数）的不同。  如果是连续的，就是多重线性回归">
+  <meta name="description" content="关于支持向量机SVM的理解和推导总结">
 <meta name="keywords" content="机器学习,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习-逻辑回归推导">
-<meta property="og:url" content="https://lesama.github.io/2019-03-12-ml-logisticRegression.html">
+<meta property="og:title" content="机器学习-支持向量机SVM">
+<meta property="og:url" content="https://lesama.github.io/2019-4-10-ml-svm.html">
 <meta property="og:site_name" content="嘿!楽">
-<meta property="og:description" content="逻辑回归逻辑回归的概念Logistic Regression 在《机器学习》-周志华一书中又叫对数几率回归。逻辑回归和多重线性回归实际上有很多的相同之处，除了它们的因变量（函数）不同外，其他的基本差不多，所以逻辑回归和线性回归又统属于广义线性模型（generalizedlinear  model）。 广义线性模型的形式其实都差不多，不同的就是因变量（函数）的不同。  如果是连续的，就是多重线性回归">
+<meta property="og:description" content="关于支持向量机SVM的理解和推导总结">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/7.png">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/6.png">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/8.png">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/9.png">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/10.png">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/11.png">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/12.png">
-<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/13.png">
-<meta property="og:updated_time" content="2019-03-16T06:31:29.861Z">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/18.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/19.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/20.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/16.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/17.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/21.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/22.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/58.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/53.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/54.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/55.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/56.png">
+<meta property="og:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/57.png">
+<meta property="og:updated_time" content="2019-04-10T10:49:30.651Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习-逻辑回归推导">
-<meta name="twitter:description" content="逻辑回归逻辑回归的概念Logistic Regression 在《机器学习》-周志华一书中又叫对数几率回归。逻辑回归和多重线性回归实际上有很多的相同之处，除了它们的因变量（函数）不同外，其他的基本差不多，所以逻辑回归和线性回归又统属于广义线性模型（generalizedlinear  model）。 广义线性模型的形式其实都差不多，不同的就是因变量（函数）的不同。  如果是连续的，就是多重线性回归">
-<meta name="twitter:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/7.png">
+<meta name="twitter:title" content="机器学习-支持向量机SVM">
+<meta name="twitter:description" content="关于支持向量机SVM的理解和推导总结">
+<meta name="twitter:image" content="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/18.png">
 
 
 
@@ -126,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="https://lesama.github.io/2019-03-12-ml-logisticRegression.html">
+  <link rel="canonical" href="https://lesama.github.io/2019-4-10-ml-svm.html">
 
 
 
@@ -136,7 +141,7 @@
   };
 </script>
 
-  <title>机器学习-逻辑回归推导 | 嘿!楽</title>
+  <title>机器学习-支持向量机SVM | 嘿!楽</title>
   
 
 
@@ -404,7 +409,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lesama.github.io/2019-03-12-ml-logisticRegression.html">
+    <link itemprop="mainEntityOfPage" href="https://lesama.github.io/2019-4-10-ml-svm.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="楽">
@@ -421,7 +426,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">机器学习-逻辑回归推导
+          <h2 class="post-title" itemprop="name headline">机器学习-支持向量机SVM
 
               
             
@@ -447,24 +452,12 @@
                 
               
 
-              <time title="创建时间：2019-03-12 18:38:17" itemprop="dateCreated datePublished" datetime="2019-03-12T18:38:17+08:00">2019-03-12</time>
+              <time title="创建时间：2019-04-10 18:09:36 / 修改时间：18:49:30" itemprop="dateCreated datePublished" datetime="2019-04-10T18:09:36+08:00">2019-04-10</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-16 14:31:29" itemprop="dateModified" datetime="2019-03-16T14:31:29+08:00">2019-03-16</time>
               
             
           </span>
@@ -485,13 +478,6 @@
 
                 
                 
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/人工智能/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
-
-                
-                
               
             </span>
           
@@ -509,6 +495,8 @@
           
 
           
+            <div class="post-description">关于支持向量机SVM的理解和推导总结</div>
+          
 
         </div>
       </header>
@@ -523,115 +511,141 @@
       
 
       
-        <h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="逻辑回归的概念"><a href="#逻辑回归的概念" class="headerlink" title="逻辑回归的概念"></a>逻辑回归的概念</h2><p><strong>Logistic Regression</strong> 在《机器学习》-周志华一书中又叫<strong>对数几率回归</strong>。逻辑回归和多重线性回归实际上有很多的相同之处，除了它们的因变量（函数）不同外，其他的基本差不多，所以逻辑回归和线性回归又统属于<strong>广义线性模型</strong>（generalizedlinear  model）。</p>
-<p>广义线性模型的形式其实都差不多，不同的就是因变量（函数）的不同。</p>
+        <hr>
+<h1 id="支持向量机SVM的概念及起源"><a href="#支持向量机SVM的概念及起源" class="headerlink" title="支持向量机SVM的概念及起源"></a>支持向量机SVM的概念及起源</h1><h2 id="什么是支持向量机SVM"><a href="#什么是支持向量机SVM" class="headerlink" title="什么是支持向量机SVM"></a>什么是支持向量机SVM</h2><p>支持向量机，因其英文名为support vector machine，故一般简称SVM，通俗来讲，它是一种二类分类模型，其基本模型定义为特征空间上的间隔最大的线性分类器，其学习策略便是间隔最大化，最终可转化为一个凸二次规划问题的求解。</p>
+<h2 id="分类标准的起源：Logistic回归"><a href="#分类标准的起源：Logistic回归" class="headerlink" title="分类标准的起源：Logistic回归"></a>分类标准的起源：Logistic回归</h2><p><strong>我们先看看什么是线性分类器</strong></p>
+<p>给定一些数据点，它们分别属于两个不同的类，现在要找到一个线性分类器把这些数据分成两类。如果用$x​$表示数据点，用$y​$表示类别（$y=1​$或者$y=-1​$，分别代表两个不同的类），一个线性分类器的学习目标便是要在$n​$维的数据空间中找到一个超平面（hyper plane），这个超平面的方程可以表示为（$w^T​$中的T代表转置）：</p>
+<p>$w^Tx+b=0$</p>
+<p><strong>Logistic回归</strong>目的是从特征学习出一个0/1分类模型，而这个模型是将特性的线性组合作为自变量，由于自变量的取值范围是负无穷到正无穷。因此，使用logistic函数（或称作sigmoid函数）将自变量映射到(0,1)上，映射后的值被认为是属于$y=1​$的概率。</p>
+<p>根据我们前面<a href="https://sevenold.github.io/2018/07/ml-logisticRegression/" target="_blank" rel="noopener">Logistic回归的推导</a>  ，假设函数：</p>
+<p>$h_\theta(x)=g(\theta^Tx)=\frac1{1+e^{-\theta^Tx}}$</p>
+<p>其中x是n维特征向量，函数g就是Logistic函数。</p>
+<p><strong>同样$g(z)=\frac{1}{1+e^{-z}}​$的图像：</strong></p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/18.png" alt="images"></p>
+<p>从图像中，我们就可以看出将无穷映射到了（0,1）。</p>
+<p>而假设函数就是特征属于y=1的概率。 </p>
+<p>$P(y=1|x;\theta)=h_\theta(x) \\ P(y=0|x;\theta)=1-h_\theta(x)​$</p>
+<p>所以，我们在判别一个新的特征属于哪个类别的时候，就只需要求$h_\theta(x)​$就可以了，由上面的图中可以看出如果$h_\theta(x)​$ 大于0.5就是y=1的类，否则就是属于y=1的类。</p>
+<p><strong>然后我们尝试给Logistic回归做一个变形。首先，将使用的结果标签y=0和y=1替换为$y=-1,y=1 ​$,然后把$\theta_0​$替换成b，把$w​$替换$\theta_i​$,所以就变换为：</strong></p>
+<p>$h_\theta(x)=g(w^Tx+b)$</p>
+<p><strong>所以我们就可以假设函数：$h_{w,b}(x)=g(w^Tx+b)$,中的g(z)做一个简化，将其简单映射到y=-1和y=1上。映射关系如下：</strong> </p>
+<p>$ g(z)=\left\lbrace  \begin{aligned} 1 &amp;&amp; z \ge0 \\ -1 &amp;&amp; z&lt;0 \end{aligned} \right. $</p>
+<p><strong>然后我们举个线性分类的例子来看看</strong></p>
+<p>如下图所示，现在有一个二维平面，平面上有两种不同的数据，分别用圈和叉表示。由于这些数据是线性可分的，所以可以用一条直线将这两类数据分开，这条直线就相当于一个超平面，超平面一边的数据点所对应的y全是-1，另一边所对应的y全是1。 </p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/19.png" alt="images"></p>
+<p>这个超平面可以用分类函数$f(x)=w^Tx+b​$来表示，当f(x)等于0时候，x便是位于超平面上的点，而f(x)大于0的点对应y=1的数据点，f(x)小于0的点对应y=-1的点，如下图所示： </p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/20.png" alt="images"></p>
+<p>接下来的问题是，如何确定这个超平面呢？从直观上而言，这个超平面应该是最适合分开两类数据的直线。而判定“最适合”的标准就是这条直线离直线两边的数据的间隔最大。所以，得寻找有着最大间隔的超平面。 </p>
+<h1 id="间隔与支持向量"><a href="#间隔与支持向量" class="headerlink" title="间隔与支持向量"></a>间隔与支持向量</h1><p>SVM支持向量机（英文全称：support vector machine）是一个分类算法， 通过找到一个分类平面， 将数据分隔在平面两侧， 从而达到分类的目的。如下图所示， 直线表示的是训练出的一个分类平面， 将数据有效的分隔开。 </p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/16.png" alt="images"></p>
+<p>根据上面的逻辑，我们在做数据分隔的时候，有很多个分类平面，这时我们就需要找出“最优”的那一个平面模型，根据【超平面】【数据点】【分开】这几个词，我们可以想到最优的模型必然是最大程度地将数据点划分开的模型，不能靠近负样本也不能靠近正样本，要不偏不倚，并且与所有Support Vector的距离尽量大才可以。 </p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/17.png" alt="images"></p>
+<p><strong>上图中 $x_0​$ 是 $x ​$在超平面上的投影，$ω​$是超平面的法向量.</strong></p>
+<p><strong>超平面用线性方程来描述：</strong></p>
+<p>$w^T+b=0$</p>
+<h1 id="函数间隔"><a href="#函数间隔" class="headerlink" title="函数间隔"></a>函数间隔</h1><p>在超平面$w ^T x + b = 0​$确定的情况下，$|w^Tx+b|​$表示点距离超平面的距离，而超平面作为二分类器，如果$w^Tx+b&gt;0​$， 判断类别y为1, 否则判定为-1。从而引出函数间隔的定义：</p>
+<p>$r=y(w^Tx+b)=yf(x)$</p>
+<p>其中y是训练数据的类标记值， 如果$y(w^T x + b) &gt;0​$说明，预测的值和标记的值相同， 分类正确，而且值越大，说明点离平面越远，分类的可靠程度更高。这是对单个样本的函数定义， 对整个样本集来说，要找到所有样本中间隔值最小的作为整个集合的函数间隔：</p>
+<p>$r=min \   r_i  , i=1,2 \cdot \cdot \cdot n$</p>
+<p>即w和b同时缩小或放大M倍后，超平面并没有变化，但是函数间隔跟着w和b变化。所以，需要加入约束条件使得函数间隔固定, 也就是几何间隔。</p>
+<h1 id="几何间隔"><a href="#几何间隔" class="headerlink" title="几何间隔"></a>几何间隔</h1><p>样本空间$x​$到超平面$x_0​$的距离：</p>
+<p>$r=\frac{|w^Tx+b|}{||w||}$</p>
+<p>如果超平面将样本成功分类，若$y_i=+1​$,则有$w^Tx+b&gt;0​$;若$y_i=-1​$,则有$w^Tx+b&lt;0​$;则下式成立 </p>
+<p>$ \left \lbrace \begin{aligned} w^Tx+b \ge+1&amp;&amp; y_i=+1 \\ w^Tx+b\le-1 &amp;&amp; y_i=-1 \end{aligned} \right.$</p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/21.png" alt="images"></p>
+<p>从上图中可以看出，距离超平面最近的这几个训练样本点使上述公式的等号成立，这几个训练样本就称为<strong>“支持向量”</strong>（support vector）</p>
+<p><strong>两个异类支持向量到超平面的距离之和（被称为间隔）：</strong></p>
+<p>$r=\frac{2}{||w||}$     </p>
+<h1 id="”最大间隔“的超平面"><a href="#”最大间隔“的超平面" class="headerlink" title="”最大间隔“的超平面"></a>”最大间隔“的超平面</h1><p>我们要找的”最大间隔“的超平面，即：</p>
+<p>$max_{w,b}\frac{2}{||w||}​$</p>
+<p>$s.t.y_i(w^Tx+b)\ge1, i=1,2,\cdot \cdot \cdot m$</p>
+<h1 id="SVM的二次凸函数和约束条件"><a href="#SVM的二次凸函数和约束条件" class="headerlink" title="SVM的二次凸函数和约束条件"></a>SVM的二次凸函数和约束条件</h1><p>最大间隔分类器的求解， 可以转换为上面的一个最优化问题， 即在满足约束条件：  </p>
+<p>$y_i(w^Tx+b)\ge1, i=1,2,\cdot \cdot \cdot m$</p>
+<p><strong>求出就最大的$\frac1{||w||}$。</strong></p>
+<p>为更好的利用现有的理论和计算方法， 可以将求解$\frac1{||w||}$最大值， 转换为一个二次凸函数优化问题：求解 $min_{w,b}\frac{1}{2}{||w||}^2$， 两者问题是等价的。原来的问题转换为二次凸函数优化问题。在一定的约束条件下，目标最优，损失最小。 </p>
+<h1 id="SVM的基本型"><a href="#SVM的基本型" class="headerlink" title="SVM的基本型"></a>SVM的基本型</h1><p>我们前面已经知道，<strong>最大化$||w||^{-1}$等价于最小化$||w||^2</strong>​$,所以：</p>
+<p>$min_{w,b}\frac{1}{2}{||w||}^2​$</p>
+<p>$s.t.y_i(w^Tx+b)\ge1, i=1,2,\cdot \cdot \cdot m$</p>
+<h1 id="拉格朗日构建方程"><a href="#拉格朗日构建方程" class="headerlink" title="拉格朗日构建方程"></a>拉格朗日构建方程</h1><p>由于这个问题的特殊结构，还可以通过拉格朗日对偶性（Lagrange Duality）变换到对偶变量(dual variable)的优化问题，即通过求解与原问题等价的对偶问题（dual problem）得到原始问题的最优解，这就是线性可分条件下支持向量机的对偶算法.</p>
+<p>这样做的<strong>优点</strong>在于：<strong>一者对偶问题往往更容易求解；二者可以自然的引入核函数，</strong></p>
+<p>进而推广到非线性分类问题。 具体来说就是对svm基本型的每条约束添加拉格朗日乘子$a_i\ge0​$,则该问题的拉格朗日函数可写为：</p>
+<p>$L(w,b,a)= \frac12 ||w||^2+\sum_{i=1}^na_i(1-y_i(w^Tx+b))​$                   $a_i=(a_1;a_2; \cdot \cdot \cdot a_m)​$.</p>
+<p>我们的目标是让拉格朗如函数$ L(ω,b,α)$ 针对 $α$ 达到最大值。为什么能够这么写呢，我们可以这样想，哪怕有一个 $y_i(ω^Tx_i+b)⩾1$不满足，只要让对应的 $α_i$ 是正无穷就好了。所以，如果$L(ω,b,α)$有有限的最大值，那么那些不等式条件是自然满足的。 之后，我们再让 $L(ω,b,α)$ 针对 $ω,b$ 达到最小值，就可以了。 从而，我们的目标函数变成： </p>
+<h2 id="原问题是极小极大的问题"><a href="#原问题是极小极大的问题" class="headerlink" title="原问题是极小极大的问题"></a>原问题是极小极大的问题</h2><p>$min_{w,b}max_aL(w,b,a)=p^*$</p>
+<h2 id="原始问题的对偶问题，是极大极小问题"><a href="#原始问题的对偶问题，是极大极小问题" class="headerlink" title="原始问题的对偶问题，是极大极小问题"></a>原始问题的对偶问题，是极大极小问题</h2><p>$max_amin_{w,b}L(w,b,a)=b^*$</p>
+<p>交换以后的新问题是原始问题的对偶问题，这个新问题的最优值用$d^*​$来表示。而且有$d^∗⩽p^∗​$，在满足某些条件的情况下，这两者相等，这个时候就可以通过求解对偶问题来间接地求解原始问题。</p>
+<p>这所谓的“满足某些条件”就是要满足KKT条件。 </p>
+<p>$ \left\lbrace\ \begin{aligned} a_i \ge0 \\ y_i(w^Tx_i+b) -1\ge 0 \\ a_i(y_i(w^Tx_i+b)-1)=0 \end{aligned} \right. $</p>
+<h1 id="KKT条件的意义"><a href="#KKT条件的意义" class="headerlink" title="KKT条件的意义"></a>KKT条件的意义</h1><p>一般地，一个<strong>最优化数学模型能够表示成下列标准形式</strong>： </p>
+<p>$min.f(x)$</p>
+<p>$s.t.  h_j(x)=0,j=1,\cdot \cdot \cdot n​$</p>
+<p>$g_k(x)\le0,k=1,\cdot \cdot \cdot m$</p>
+<p>$x\in X \subset R^n$</p>
+<p><strong>其中，f(x)是需要最小化的函数，h(x)是等式约束，g(x)是不等式约束，p和q分别为等式约束和不等式约束的数量。</strong> </p>
 <ul>
-<li>如果是<strong>连续</strong>的，就是<strong>多重线性回归</strong></li>
-<li>如果是<strong>二项分布</strong>，就是<strong>Logistic回归</strong></li>
-<li>如果是<strong>Poisson分布</strong>，就是<strong>Poisson分布</strong></li>
-<li>如果是<strong>负二项分布</strong>，就是<strong>负二项回归</strong></li>
-</ul>
-<p>Logistic回归的因变量可以是二分类的，也可以是多分类的，但是二分类的更为常用，也更加容易解释。所以实际中最常用的就是二分类的Logistic回归。 </p>
-<h2 id="线性回归-Logistic回归"><a href="#线性回归-Logistic回归" class="headerlink" title="线性回归-Logistic回归"></a>线性回归-Logistic回归</h2><p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/7.png" alt="image"></p>
-<h2 id="Logistic回归的主要用途："><a href="#Logistic回归的主要用途：" class="headerlink" title="Logistic回归的主要用途："></a>Logistic回归的<strong>主要用途</strong>：</h2><ul>
-<li>寻找危险因素：寻找某一疾病的危险因素等；</li>
-<li>预测：根据模型，预测在不同的自变量情况下，发生某病或某种情况的概率有多大；</li>
-<li>判别：实际上跟预测有些类似，也是根据模型，判断某人属于某病或属于某种情况的概率有多大，也就是看一下这个人有多大的可能性是属于某病。</li>
-</ul>
-<p>Logistic回归主要在<strong>流行病学</strong>中应用较多，比较常用的情形是探索某疾病的危险因素，根据危险因素预测某疾病发生的概率，等等。例如，想探讨胃癌发生的危险因素，可以选择两组人群，一组是胃癌组，一组是非胃癌组，两组人群肯定有不同的体征和生活方式等。这里的因变量就是是否胃癌，即“是”或“否”，自变量就可以包括很多了，例如年龄、性别、饮食习惯、幽门螺杆菌感染等。自变量既可以是连续的，也可以是分类的。 </p>
-<h2 id="常规步骤"><a href="#常规步骤" class="headerlink" title="常规步骤"></a><strong>常规步骤</strong></h2><p>Regression问题的常规步骤为：</p>
-<ol>
-<li>寻找<strong>h</strong>函数（即hypothesis）；</li>
-<li>构造<strong>J</strong>函数（损失函数）；</li>
-<li>想办法使得J<strong>函数最小</strong>并求得回归参数（θ）</li>
-</ol>
-<h2 id="构造预测函数（hypothesis）"><a href="#构造预测函数（hypothesis）" class="headerlink" title="构造预测函数（hypothesis）"></a>构造预测函数（hypothesis）</h2><p>Logistic回归虽然名字里带“回归”，但是它实际上是一种分类方法，主要用于两分类问题（即输出只有两种，分别代表两个类别），所以利用了Logistic函数（或称为<strong>Sigmoid函数</strong>），函数形式为：</p>
-<p>$$<br>g(z)=\frac{1}{1+e^{-z}}​<br>$$<br>为了方便后面使用我们求出$g(z)​$的导数：</p>
-<p>$$<br>g^{‘}(z)=\frac1{1-e^{-x} } \cdot (1- \frac1{1-e^{-x} })=g(z)(1-g(z))<br>$$<br>Sigmoid 函数在有个很漂亮的“S”形，如下图所示 </p>
-<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/6.png" alt="image"></p>
-<h2 id="构建预测函数"><a href="#构建预测函数" class="headerlink" title="构建预测函数"></a>构建预测函数</h2><p><strong>决策边界</strong>又分为<strong>线性的决策边界</strong>和<strong>非线性的决策边界</strong></p>
-<p>线性的决策边界：</p>
-<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/8.png" alt="1"></p>
-<p>非线性的决策边界：</p>
-<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/9.png" alt="2"></p>
-<p>对于线性边界的情况，边界形式如下：</p>
-<p>$$<br>\theta_0+\theta_1x_1+\cdot \cdot \cdot + \theta_nx_n=\sum_{i=1}^n \theta_ix_i = \theta^Tx<br>$$<br>构建的预测函数为：</p>
-<p>$$<br>h_\theta(x)=g(\theta^Tx)=\frac1{1+e^{-\theta^Tx}}​<br>$$</p>
-<h2 id="构建损失函数"><a href="#构建损失函数" class="headerlink" title="构建损失函数"></a>构建损失函数</h2><p>由于是二项分布，函数<strong>$h_ \theta(x)$</strong>的值就有特殊的含义，它所表示的是结果取1的概率，因此对于输入x的分类结果就判别为类别1和类别0的概率分别为：</p>
-<p>$$<br>P(y=1|x;\theta)=h_\theta(x) \\ P(y=0|x;\theta)=1-h_\theta(x)<br>$$<br>所以：</p>
-<p>$$<br>P(y|x;\theta) = {h_\theta(x) }^y{(1-h_\theta(x)) }^{1-y}<br>$$</p>
-<h2 id="构建似然函数"><a href="#构建似然函数" class="headerlink" title="构建似然函数"></a>构建似然函数</h2><p>$$<br>L(\theta)=\prod_{i=1}^n P(y_i|x_i;\theta) =\prod_{i=1}^n {h_\theta(x_i) }^{y_i}{(1-h_\theta(x_i)) }^{1-y_i}<br>$$</p>
-<h2 id="对数似然函数"><a href="#对数似然函数" class="headerlink" title="对数似然函数"></a>对数似然函数</h2><p>$$<br>l(\theta)=logL(\theta)=\sum_{i=1}^n(y_ilogh_\theta(x_i)+(1-y_i)log(1-h_\theta(x_i)))​<br>$$</p>
-<p>最大似然估计就是求使<strong>$l(\theta)​$</strong>取最大值时的θ，其实这里可以使用梯度上升法求解，求得的θ就是要求的最佳参数。</p>
-<h2 id="梯度下降法求的最小值"><a href="#梯度下降法求的最小值" class="headerlink" title="梯度下降法求的最小值"></a><strong>梯度下降法求的最小值</strong></h2><h3 id="θ更新过程："><a href="#θ更新过程：" class="headerlink" title="θ更新过程："></a>θ更新过程：</h3><p>$$<br>\theta_j :=\theta_j-a(\frac{\partial l(\theta)}{\partial \theta_j})<br>$$</p>
-<h3 id="对-theta-求偏导"><a href="#对-theta-求偏导" class="headerlink" title="对$\theta$求偏导"></a>对$\theta$求偏导</h3><p>$\frac{\partial l(\theta)}{\partial \theta_j}=\frac{\partial g(\theta^Tx)}{\partial \theta_j}(\frac{y}{g(\theta^Tx)}-\frac{1-y}{g(\theta^Tx)})​$</p>
-<p>$=g(\theta^Tx)(1-g(\theta^Tx)) \frac{\partial\theta^Tx}{\partial \theta_j}(\frac{y}{g(\theta^Tx)}-\frac{1-y}{g(\theta^Tx)})​$</p>
-<p>$=(y(1-g(\theta^Tx))-(1-y)g(\theta^Tx))x_j$ </p>
-<p>$=(y-h_\theta(x))x_j​$ </p>
-<h3 id="θ更新过程就可以写为："><a href="#θ更新过程就可以写为：" class="headerlink" title="θ更新过程就可以写为："></a>θ更新过程就可以写为：</h3><p>$\theta_j :=\theta_j-a\sum_{i=1}^n (y_i-h_\theta(x_i))x_i^j$</p>
-<h3 id="但是在在Andrew-Ng的课程中将-J-theta-取为下式，即："><a href="#但是在在Andrew-Ng的课程中将-J-theta-取为下式，即：" class="headerlink" title="但是在在Andrew Ng的课程中将 $J(\theta)$取为下式，即："></a>但是在在Andrew Ng的课程中将 $J(\theta)$取为下式，即：</h3><p>$J(\theta)=-\frac{1}{m}l(\theta)$</p>
-<p><strong>因为乘了一个负的系数-1/m，所以取 $J(\theta)​$最小值时的θ为要求的最佳参数。</strong> </p>
-<p>$\frac{\partial l(\theta)}{\partial \theta_j}=\frac 1 m \sum_{i=1}^n(h_\theta(x_i)-y_i)x_i^j$</p>
-<p><strong>相应的$\theta​$:</strong></p>
-<p>$\theta_j :=\theta_j-a \frac 1 m \sum_{i=1}^n (h_\theta(x_i)-y_i)x_i^j$</p>
-<h2 id="向量化（Vectorization-）"><a href="#向量化（Vectorization-）" class="headerlink" title="向量化（Vectorization ）"></a>向量化（<strong>Vectorization</strong> ）</h2><p>Vectorization是使用矩阵计算来代替for循环，以简化计算过程，提高效率。</p>
-<p>如上式，Σ(…)是一个求和的过程，显然需要一个for语句循环m次，所以根本没有完全的实现vectorization。</p>
-<h3 id="下面介绍向量化的过程："><a href="#下面介绍向量化的过程：" class="headerlink" title="下面介绍向量化的过程："></a>下面介绍向量化的过程：</h3><p>约定训练数据的矩阵形式如下，x的每一行为一条训练样本，而每一列为不同的特称取值：</p>
-<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/10.png" alt="image"></p>
-<p><strong>g(A)的参数A为一列向量，所以实现g函数时要支持列向量作为参数，并返回列向量。由上式可知 $h_\theta(x)-y$可以由$g(A)-y$一次求得</strong></p>
-<h3 id="θ更新过程可以改为"><a href="#θ更新过程可以改为" class="headerlink" title="θ更新过程可以改为"></a>θ更新过程可以改为</h3><p>$\theta_j :=\theta_j-a \frac 1 m \sum_{i=1}^n (h_\theta(x_i)-y_i)x_i^j=\theta_j-a \frac 1 m \sum_{i=1}^n e_ix_i^j=\theta_j-a \frac1 m x^TE$</p>
-<h3 id="综上所述，Vectorization后θ更新的步骤如下："><a href="#综上所述，Vectorization后θ更新的步骤如下：" class="headerlink" title="综上所述，Vectorization后θ更新的步骤如下："></a>综上所述，Vectorization后θ更新的步骤如下：</h3><hr>
-<ol>
-<li><p>求:$A=x \cdot \theta$</p>
+<li><p><strong>凸优化的概念：$x\subset R^n​$为一凸集，$f:x\to R​$为一凸函数，凸优化就是要找出一点$x^<em>\in X​$,使得每一$x\in X​$满足$f(x^</em>)\le f(x)​$</strong></p>
 </li>
-<li><p>求$E=g(A)-y​$</p>
+<li><p><strong>KKT条件的意义：它是一个非线性规划（Nonlinear Programming）问题能有最优化解法的必要和充分条件。</strong></p>
 </li>
-<li><p>求$\theta:=\theta-ax^TE$</p>
+</ul>
+<p>而KKT条件就是指上面最优化数学模型的标准形式中的最小点$ x*​$ 必须满足下面的条件： </p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/22.png" alt="images"></p>
+<p>经过论证，我们这里的问题是满足KKT条件的（首先已经满足Slater condition，再者$f(x)$和$g(x)$也都是可微的，即$L$对$w$和$b$都可导），因此现在我们便转化为求解第二个问题。</p>
+<p>也就是说，原始问题通过满足KKT条件，已经转化成了对偶问题。而求解这个对偶学习问题，分为3个步骤：首先要让$L(w，b，a)$关于$w$和$b$最小化，然后求对$a$的极大，最后利用SMO算法求解对偶问题中的拉格朗日乘子。</p>
+<h1 id="对偶问题求解"><a href="#对偶问题求解" class="headerlink" title="对偶问题求解"></a>对偶问题求解</h1><p><strong>首先</strong>固定$a​$,先求出$min_{w,b}L(w,b,a)​$,所以分别对$w,b​$进行求偏导并令其等于0。</p>
+<p>$\frac{\partial L(w,b,a)}{\partial w}=\frac{\partial(\frac12w^Tw+\sum_{i=1}^na_i-\sum_{i=1}^n a_iby_i-\sum_{i=1}^n a_iy_iw^Tx)}{\partial w}  =0$</p>
+<p>$\frac{\partial L(w,b,a)}{\partial b}=\frac{\partial(\frac12w^Tw+\sum_{i=1}^na_i-\sum_{i=1}^n a_iby_i-\sum_{i=1}^n a_iy_iw^Tx)}{\partial b}  =0​$</p>
+<p>$w=\sum_{i=1}^na_ix_iy_i​$</p>
+<p>$\sum_{i=1}^na_iy_i=0​$</p>
+<p>然后我们将以上结果带入原式<strong>$L(w,b,a)​$</strong>:</p>
+<p>$L(w,b,a)= \frac12 ||w||^2+\sum_{i=1}^na_i(1-y_i(w^Tx+b))$</p>
+<p>$=\frac12w^Tw+\sum_{i=1}^na_i-\sum_{i=1}^n a_iby_i-\sum_{i=1}^n a_iy_iw^Tx​$</p>
+<p><strong>导入$w=\sum_{i=1}^na_ix_iy_i​$:</strong></p>
+<p>$=\frac12w^T(\sum_{i=1}^na_ix_iy_i)+\sum_{i=1}^na_i-\sum_{i=1}^n a_iby_i-w^T(\sum_{i=1}^n a_iy_ix)$</p>
+<p><strong>导入$\sum_{i=1}^na_iy_i=0$:</strong></p>
+<p>$=\sum_{i=1}^na_i-\frac12w^T(\sum_{i=1}^na_ix_iy_i)​$</p>
+<p>$=\sum_{i=1}^na_i-\frac12{(\sum_{i=1}^na_ix_iy_i)}^T(\sum_{i=1}^na_ix_iy_i)$</p>
+<p>$=\sum_{i=1}^na_i-\frac12(\sum_{i=1}^na_i{x_i}^Ty_i)(\sum_{i=1}^na_ix_iy_i)​$</p>
+<p>$=\sum_{i=1}^na_i-\frac12\sum_{i=1,j=1}^na_ia_j{x_i}^Tx_jy_iy_j​$</p>
+<p>从上面的最后一个式子，我们可以看出，此时的拉格朗日函数只包含了一个变量，那就是$a_i​$(求出了$a_i​$便能求出$w,b​$,然后我们的分类函数$f(x)=w^Tx+b​$就非常容易的求出来了)。</p>
+<p><strong>然后</strong>求对$a$的极大值：</p>
+<p>即是关于对偶问题的最优化问题。经过上面第一个步骤的求w和b，得到的拉格朗日函数式子已经没有了变量w，b，只有从上面的式子得到： </p>
+<p>$max_a \sum_{i=1}^na_i-\frac12\sum_{i=1,j=1}^na_ia_j{x_i}^Tx_jy_iy_j​$</p>
+<p>$s.t. ,a_i\ge0, i=1,\cdot \cdot \cdot n$</p>
+<p>$\sum_{i=1}^na_iy_i=0$</p>
+<p>我们一般用SMO算法来求解$a​$</p>
+<h1 id="SMO优化算法"><a href="#SMO优化算法" class="headerlink" title="SMO优化算法"></a>SMO优化算法</h1><p>SMO算法由Microsoft Research的John C. Platt在1998年提出，并成为最快的二次规划优化算法，特别针对线性SVM和数据稀疏时性能更优。 </p>
+<p>SMO的基本思路是先固定$a_i​$之外的所有参数，然后求$a_i​$上的极值。由于存在约束$\sum_{i=1}^na_iy_i=0​$，若固定$a_i​$之外的其他变量，则$a_i​$可由其他变量导出。于是，SMO每次选择两个变量$a_i和a_j​$,并固定其他参数。这样，在参数初始化后，SMO不断执行如下两个步骤直至收敛：</p>
+<ul>
+<li><p><strong>选取一对需更新的变量$a_i和 a_j$.</strong></p>
 </li>
-</ol>
-<hr>
-<h2 id="正则化Regularization"><a href="#正则化Regularization" class="headerlink" title="正则化Regularization"></a><strong>正则化Regularization</strong></h2><p>同样逻辑回归也有<strong>欠拟合、适合拟合、过拟合问题</strong></p>
-<p>对于线性回归或逻辑回归的损失函数构成的模型，可能会有些权重很大，有些权重很小，导致过拟合（就是过分拟合了训练数据），使得模型的复杂度提高，泛化能力较差（对未知数据的预测能力）。</p>
-<p>下面左图即为欠拟合，中图为合适的拟合，右图为过拟合。</p>
-<p>​             <img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/11.png" alt="image"></p>
-<p>过拟合问题往往源自过多的特征。</p>
-<h3 id="过拟合问题解决方法"><a href="#过拟合问题解决方法" class="headerlink" title="过拟合问题解决方法"></a><strong>过拟合问题解决方法</strong></h3><p>1）减少特征数量（减少特征会失去一些信息，即使特征选的很好）</p>
-<ul>
-<li>可用人工选择要保留的特征；</li>
-<li>模型选择算法；</li>
+<li><p><strong>固定$a_i和 a_j$以外的参数，求解$max_a \sum_{i=1}^na_i-\frac12\sum_{i=1,j=1}^na_ia_j{x_i}^Tx_jy_iy_j$,获得更新后的$a_i和 a_j$</strong></p>
+</li>
 </ul>
-<p>2）正则化（特征较多时比较有效）</p>
-<ul>
-<li>保留所有特征，但减少θ的大小</li>
-</ul>
-<h3 id="正则化方法"><a href="#正则化方法" class="headerlink" title="正则化方法"></a><strong>正则化方法</strong></h3><p>正则化是结构风险最小化策略的实现，是在经验风险上加一个正则化项或惩罚项。正则化项一般是模型复杂度的单调递增函数，模型越复杂，正则化项就越大。</p>
-<p>在线性回归算法的正则化问题,正则项可以取不同的形式，在回归问题中取平方损失，就是参数的L2范数，也可以取L1范数。取平方损失时，模型的损失函数变为： </p>
-<p>$$<br>J(\theta)=\frac1{2m}\sum_{i=1}^{n}(h_\theta(x_i)-y_i)^2+\lambda\sum_{j=1}^n \theta_j^2<br>$$</p>
-<h3 id="lambda是正则项系数："><a href="#lambda是正则项系数：" class="headerlink" title="lambda是正则项系数："></a>lambda是正则项系数：</h3><ul>
-<li>如果它的值很大，说明对模型的复杂度惩罚大，对拟合数据的损失惩罚小，这样它就不会过分拟合数据，在训练数据上的偏差较大，在未知数据上的方差较小，但是可能出现欠拟合的现象；</li>
-<li>如果它的值很小，说明比较注重对训练数据的拟合，在训练数据上的偏差会小，但是可能会导致过拟合。</li>
-</ul>
-<h3 id="正则化后的梯度下降算法θ的更新变为："><a href="#正则化后的梯度下降算法θ的更新变为：" class="headerlink" title="正则化后的梯度下降算法θ的更新变为："></a>正则化后的梯度下降算法θ的更新变为：</h3><p>$$<br>\theta_j :=\theta_j-a \frac 1 m \sum_{i=1}^n (h_\theta(x_i)-y_i)x_i^j - \frac \lambda m \theta_j<br>$$</p>
-<h2 id="其他优化算法"><a href="#其他优化算法" class="headerlink" title="其他优化算法"></a><strong>其他优化算法</strong></h2><ul>
-<li>Conjugate gradient method(共轭梯度法)</li>
-<li>Quasi-Newton method(拟牛顿法)</li>
-<li>BFGS method(局部优化法)</li>
-<li>L-BFGS(Limited-memory BFGS)（有限内存局部优化法）</li>
-</ul>
-<p>后二者由拟牛顿法引申出来，与梯度下降算法相比，这些算法的优点是：</p>
-<ul>
-<li>第一，不需要手动的选择步长；</li>
-<li>第二，通常比梯度下降算法快；</li>
-</ul>
-<p>但是缺点是更复杂。</p>
-<h2 id="多类分类问题"><a href="#多类分类问题" class="headerlink" title="多类分类问题"></a>多类分类问题</h2><p>多类分类问题中,我们的训练集中有多个类(&gt;2),我们无法仅仅用一个二元变量(0或1)来做判断依据。例如我们要预测天气情况分四种类型:晴天、多云、下雨或下雪。下面是一个多类分类问题可能的情况: </p>
-<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/12.png" alt="image"></p>
-<p>一种解决这类问题的途径是采用一对多(One-vs-All)方法（可以将其看做成二类分类问题：保留其中的一类，剩下的作为另一类 ）。在一对多方法中,我们将多类分类问题转化成二元分类问题。为了能实现这样的转变,我们将多个类中的一个类标记为正向类(y=1),然后将其他所有类都标记为负向类,这个模型记作：</p>
-<p>$$<br>h_\theta^{(1)}(x)<br>$$<br>接着,类似地第我们选择另一个类标记为正向类(y=2),再将其它类都标记为负向类,将这个模型记作,</p>
-<p>$$<br>h_\theta^{(2)}(x)<br>$$<br>依此类推。最后我们得到一系列的模型简记为: </p>
-<p>$$<br>h_\theta^{(i)}(x)=p(y=i|x;\theta)​<br>$$<br>其中 i = 1,2,3,…,k步骤可以记作下图： </p>
-<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-03-12-ml-logisticRegression/13.png" alt="image"></p>
-<p>最后,在我们需要做预测时,我们将所有的分类机都运行一遍,然后对每一个输入变量,都选择最高可能性的输出变量。</p>
+<p><strong>那如何做才能做到不断收敛呢？</strong></p>
+<p>注意只需选取的$a_i和 a_j​$ 中有一个不满足KKT的条件，目标函数就会在不断迭代后减小。直观来说<strong>KKT条件的违背的程度越大，则变量更新后可能导致的目标函数值减幅越大</strong>，</p>
+<p><strong>那如何选取变量呢？</strong></p>
+<p>第一个变量SMO 先选取违背KKT条件程度最大的变量。</p>
+<p>第二个变量应该选择一个使目标函数值减小最快的变量。</p>
+<p><strong>但是</strong>由于比较各变量所对应的目标函数值减幅的复杂度过高，因此SMO就采用了一个启发式：<strong>使选取的变量所对应的样本之间的间隔最大</strong>。</p>
+<p> <strong>总结</strong>：这样选取的两个变量有很大的差别，与对两个相似的变量进行更新相比，对它们进行更新会带给目标函数值更大的变化。SMO之所以高效，就是在于固定其他参数后，只优化两个参数的过程能做到非常高效。</p>
+<p><strong>所以</strong>：只考虑$a_i和 a_j​$时，约束条件就改变为：</p>
+<p>$max_a \sum_{i=1}^na_i-\frac12\sum_{i=1,j=1}^na_ia_j{x_i}^Tx_jy_iy_j$</p>
+<p>$s.t. ,a_iy_i+a_jy_j=c, a_i \ge 0, a_j \ge 0$</p>
+<p>$\sum_{i=1}^na_iy_i=0​$</p>
+<p>其中：$c= -\sum_{k \ne i,j}a_ky_k$是使$\sum_{i=1}^na_iy_i=0$ 成立的常数。</p>
+<p>然后用$a_iy_i+a_jy_j=c$ 消去变量$a_j$ ，就可以得到一个关于$a_j$ 的单变量的二次规划问题，通过约束条件$a_i \ge0$,就可以解出这个二次规划问题的闭式解，于是不必调用数值优化算法就可以很快的算出更新后的$a_i 和 a_j$。</p>
+<h1 id="线性模型"><a href="#线性模型" class="headerlink" title="线性模型"></a>线性模型</h1><p><strong>用SMO 解出$a​$后，我们前面以前算出$w​$的值，所以我们还需要在前面的基础上算出b的值</strong></p>
+<p>$w=\sum_{i=1}^na_ix_iy_i​$</p>
+<p>$b=y_j-\sum_{i=1}^n a_iy_i{x_i}^Tx_j​$</p>
+<p><strong>所以就可以得到模型</strong></p>
+<p>$f(x)=w^Tx+b=\sum_{i=1}^n a_iy_i{x_i}^Tx+b$</p>
+<h1 id="实战一下"><a href="#实战一下" class="headerlink" title="实战一下"></a>实战一下</h1><p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/58.png" alt="image"></p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/53.png" alt="image"></p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/54.png" alt="image"></p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/55.png" alt="image"></p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/56.png" alt="image"></p>
+<p><img src="http://lesama-blog.oss-cn-beijing.aliyuncs.com/2019-4-10-ml-svm/57.png" alt="image"></p>
 
       
     </div>
@@ -699,8 +713,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019-03-11-ml-DecisionTree.html" rel="next" title="机器学习-决策树和随机森林">
-                <i class="fa fa-chevron-left"></i> 机器学习-决策树和随机森林
+              <a href="/2019-03-12-ml-logisticRegression.html" rel="next" title="机器学习-逻辑回归推导">
+                <i class="fa fa-chevron-left"></i> 机器学习-逻辑回归推导
               </a>
             
           </div>
@@ -708,10 +722,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019-4-10-ml-svm.html" rel="prev" title="机器学习-支持向量机SVM">
-                机器学习-支持向量机SVM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -948,7 +958,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑回归"><span class="nav-number">1.</span> <span class="nav-text">逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归的概念"><span class="nav-number">1.1.</span> <span class="nav-text">逻辑回归的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归-Logistic回归"><span class="nav-number">1.2.</span> <span class="nav-text">线性回归-Logistic回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Logistic回归的主要用途："><span class="nav-number">1.3.</span> <span class="nav-text">Logistic回归的主要用途：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常规步骤"><span class="nav-number">1.4.</span> <span class="nav-text">常规步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造预测函数（hypothesis）"><span class="nav-number">1.5.</span> <span class="nav-text">构造预测函数（hypothesis）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建预测函数"><span class="nav-number">1.6.</span> <span class="nav-text">构建预测函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建损失函数"><span class="nav-number">1.7.</span> <span class="nav-text">构建损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建似然函数"><span class="nav-number">1.8.</span> <span class="nav-text">构建似然函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数似然函数"><span class="nav-number">1.9.</span> <span class="nav-text">对数似然函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降法求的最小值"><span class="nav-number">1.10.</span> <span class="nav-text">梯度下降法求的最小值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#θ更新过程："><span class="nav-number">1.10.1.</span> <span class="nav-text">θ更新过程：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对-theta-求偏导"><span class="nav-number">1.10.2.</span> <span class="nav-text">对$\theta$求偏导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#θ更新过程就可以写为："><span class="nav-number">1.10.3.</span> <span class="nav-text">θ更新过程就可以写为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#但是在在Andrew-Ng的课程中将-J-theta-取为下式，即："><span class="nav-number">1.10.4.</span> <span class="nav-text">但是在在Andrew Ng的课程中将 $J(\theta)$取为下式，即：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量化（Vectorization-）"><span class="nav-number">1.11.</span> <span class="nav-text">向量化（Vectorization ）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下面介绍向量化的过程："><span class="nav-number">1.11.1.</span> <span class="nav-text">下面介绍向量化的过程：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#θ更新过程可以改为"><span class="nav-number">1.11.2.</span> <span class="nav-text">θ更新过程可以改为</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#综上所述，Vectorization后θ更新的步骤如下："><span class="nav-number">1.11.3.</span> <span class="nav-text">综上所述，Vectorization后θ更新的步骤如下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化Regularization"><span class="nav-number">1.12.</span> <span class="nav-text">正则化Regularization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过拟合问题解决方法"><span class="nav-number">1.12.1.</span> <span class="nav-text">过拟合问题解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则化方法"><span class="nav-number">1.12.2.</span> <span class="nav-text">正则化方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda是正则项系数："><span class="nav-number">1.12.3.</span> <span class="nav-text">lambda是正则项系数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则化后的梯度下降算法θ的更新变为："><span class="nav-number">1.12.4.</span> <span class="nav-text">正则化后的梯度下降算法θ的更新变为：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他优化算法"><span class="nav-number">1.13.</span> <span class="nav-text">其他优化算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多类分类问题"><span class="nav-number">1.14.</span> <span class="nav-text">多类分类问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#支持向量机SVM的概念及起源"><span class="nav-number">1.</span> <span class="nav-text">支持向量机SVM的概念及起源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是支持向量机SVM"><span class="nav-number">1.1.</span> <span class="nav-text">什么是支持向量机SVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类标准的起源：Logistic回归"><span class="nav-number">1.2.</span> <span class="nav-text">分类标准的起源：Logistic回归</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#间隔与支持向量"><span class="nav-number">2.</span> <span class="nav-text">间隔与支持向量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数间隔"><span class="nav-number">3.</span> <span class="nav-text">函数间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几何间隔"><span class="nav-number">4.</span> <span class="nav-text">几何间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#”最大间隔“的超平面"><span class="nav-number">5.</span> <span class="nav-text">”最大间隔“的超平面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM的二次凸函数和约束条件"><span class="nav-number">6.</span> <span class="nav-text">SVM的二次凸函数和约束条件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM的基本型"><span class="nav-number">7.</span> <span class="nav-text">SVM的基本型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拉格朗日构建方程"><span class="nav-number">8.</span> <span class="nav-text">拉格朗日构建方程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原问题是极小极大的问题"><span class="nav-number">8.1.</span> <span class="nav-text">原问题是极小极大的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原始问题的对偶问题，是极大极小问题"><span class="nav-number">8.2.</span> <span class="nav-text">原始问题的对偶问题，是极大极小问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#KKT条件的意义"><span class="nav-number">9.</span> <span class="nav-text">KKT条件的意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对偶问题求解"><span class="nav-number">10.</span> <span class="nav-text">对偶问题求解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SMO优化算法"><span class="nav-number">11.</span> <span class="nav-text">SMO优化算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性模型"><span class="nav-number">12.</span> <span class="nav-text">线性模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实战一下"><span class="nav-number">13.</span> <span class="nav-text">实战一下</span></a></li></ol></div>
             
 
           </div>
@@ -1120,7 +1130,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019-03-12-ml-logisticRegression.html'
+    refer: '2019-4-10-ml-svm.html'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];

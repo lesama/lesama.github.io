@@ -563,7 +563,7 @@
 <p>对数似然函数</p>
 <p>$l(w)=-nln\sigma\sqrt{2\pi}-\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y_i-w^Tx_i)^2 -dln \tau \sqrt{2\pi}-\frac{1}{2\tau^2}\sum_{j=1}^{d}(w_j)^2 ​$</p>
 <p>因为$-nln\sigma\sqrt{2\pi}-dln \tau \sqrt{2\pi}$是定值，最后的解析解：</p>
-<p>$arg max_w \ L(w) = arg min_w f(w)=\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y_i-w^Tx_i)^2+ \lambda\sum_{j=1}^{d}(w_j)^2 \\\  =||y-w^TX||_2^2+\lambda||w||_2^2 ​$</p>
+<p>$arg max_w \ L(w) = arg min_w f(w)=\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y_i-w^Tx_i)^2+ \lambda\sum_{j=1}^{d}(w_j)^2 \\  =||y-w^TX||_2^2+\lambda||w||_2^2 ​$</p>
 <h2 id="LASSO-L1正则"><a href="#LASSO-L1正则" class="headerlink" title="LASSO(L1正则)"></a>LASSO(L1正则)</h2><p>如果$b \sim N(u, \sigma^2), w_i \sim Laplace(u,b)​$,其中$u=0​$;</p>
 <p>所以使用最大后验估计推导：</p>
 <p>构建似然函数：</p>
@@ -571,7 +571,7 @@
 <p>对数似然：</p>
 <p>$l(w)=-nln\sigma\sqrt{2\pi}-\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y_i-w^Tx_i)^2 -dln 2b -\frac{1}{b}\sum_{j=1}^{d}|w_j| ​$</p>
 <p>因为$-nln\sigma\sqrt{2\pi}-dln2b$是定值，最后的解析解：</p>
-<p>$arg max_w \ L(w) = arg min_w f(w)=\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y_i-w^Tx_i)^2+ \lambda\sum_{j=1}^{d}|w_j| \\\  =||y-w^TX||_2^2+\lambda||w||_1$</p>
+<p>$arg max_w \ L(w) = arg min_w f(w)=\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y_i-w^Tx_i)^2+ \lambda\sum_{j=1}^{d}|w_j| \\  =||y-w^TX||_2^2+\lambda||w||_1$</p>
 <h2 id="线性回归正则化总结"><a href="#线性回归正则化总结" class="headerlink" title="线性回归正则化总结"></a>线性回归正则化总结</h2><p>L1正则化和L2正则化可以看做是损失函数的惩罚项，所谓『惩罚』是指对损失函数中的某些参数做一些限制 ，都能防止过拟合，一般L2的效果更好一些，L1能够产生稀疏模型，能够帮助我们去除某些特征，因此可以用于特征选择。</p>
 <hr>
 <ul>
@@ -732,7 +732,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -947,7 +947,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共16.8k字</span>
+  <span class="post-count">博客全站共20.6k字</span>
 </div>
 
 
