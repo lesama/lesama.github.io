@@ -2,37 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lesama.github.io/2019-4-10-ml-svm.html</loc>
-    
-    <lastmod>2019-04-10T10:49:30.651Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/2019-03-12-ml-logisticRegression.html</loc>
-    
-    <lastmod>2019-03-16T06:31:29.861Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lesama.github.io/JavaScript-01.html</loc>
     
     <lastmod>2019-03-12T10:59:06.748Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/2019-03-10-ml-linearRegression-python.html</loc>
-    
-    <lastmod>2019-03-12T10:41:28.068Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/2019-03-11-ml-DecisionTree.html</loc>
-    
-    <lastmod>2019-03-12T10:41:23.076Z</lastmod>
     
   </url>
   
@@ -82,20 +54,6 @@
     <loc>https://lesama.github.io/python-numerical-sequence.html</loc>
     
     <lastmod>2019-03-12T10:40:33.169Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/2019-03-08-ml-linearRegressionL1L2.html</loc>
-    
-    <lastmod>2019-03-10T11:24:12.358Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lesama.github.io/2019-03-07-ml-linearRegression.html</loc>
-    
-    <lastmod>2019-03-10T11:20:53.187Z</lastmod>
     
   </url>
   
